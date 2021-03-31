@@ -1,0 +1,11 @@
+.home {
+  display: grid;
+  justify-content: center;
+}
+
+.current-balance {
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
