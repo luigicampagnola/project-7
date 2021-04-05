@@ -7,7 +7,7 @@ import Home from '../Components/Home/Home';
 class App extends Component {
   render() {
     return (
-      <div className="">
+      <div className="bg-color">
         <NavbarComponent />
         <Home />
       </div>

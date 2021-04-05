@@ -6,26 +6,35 @@ import { Container } from "react-bootstrap";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Loans from "../Loans/Loans";
+import Close from "../Close/Close";
 
 const Home = () => {
   return (
     <div>
       <h1 className="">home</h1>
       <div className="">
-        <h2 className="current-balance">Current Balance</h2>
-        <Container>
-          <Row>
-            <Col sm={8}>
-              <Transactions />
-            </Col>
-            <Col sm={4}>
-              <Transfer className="bg-warning shadow-1-strong" />
-            </Col>
-            <Col sm={4}>
-              <Loans />
-            </Col>
-          </Row>
-        </Container>
+        <div className="mt-5">
+          <Container>
+            <h2>Current Balance</h2>
+            <Row>
+              <Col sm={7}>
+                <Transactions />
+              </Col>
+              <Col sm={5}>
+                <div className="transaction-color">
+                  <Transfer className="bg-warning shadow-1-strong" />
+                </div>
+                <div className="mt-3 loan-color">
+                  <Loans />
+                </div>
+                <div className="mt-3 close-color">
+                  <Close />
+                </div>
+              </Col>
+            </Row>
+          </Container>
+        </div>
+
         <p>Date and Time</p>
         <p>Transaction component</p>
         <p>Transfer Money Component</p>

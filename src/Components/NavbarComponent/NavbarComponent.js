@@ -17,10 +17,10 @@ const NavbarComponent = () => {
           <Form>
             <Form.Row>
               <Form.Group as={Col} controlId="formGriidEmail">
-                <Form.Control type="email" placeholder="user" />
+                <Form.Control className='mt-2' type="email" placeholder="user" />
               </Form.Group>
               <Form.Group as={Col} controlId="formGridPassword">
-                <Form.Control type="password" placeholder="PIN" />
+                <Form.Control className='mt-2' type="password" placeholder="PIN" />
               </Form.Group>
             </Form.Row>
           </Form>

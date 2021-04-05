@@ -4,8 +4,29 @@
 }
 
 .current-balance {
-    display: flex;
-    justify-content: center;
-    align-items: center;    
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.transaction-color {
+  background-color: #f0ad4e;
+  color: white;
+  border-radius: 15px;
+}
+
+.loan-color {
+  background-color: #5cb85c;
+  color: white;
+  border-radius: 15px;
+}
+
+.close-color {
+  background-color: #d9534f;
+  color: white;
+  border-radius: 15px;
+}
+
+.b-radius {
+  border-radius: 15px;;
+}
