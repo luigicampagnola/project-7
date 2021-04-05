@@ -40,3 +40,10 @@
 .bg-color {
   background-color: #f7f7f7;
 }
+
+.sign-up {
+  display: flex;
+  justify-content: center;
+  border-color: black;
+  border-radius: 15px;
+}

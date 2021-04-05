@@ -7,6 +7,7 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Loans from "../Loans/Loans";
 import Close from "../Close/Close";
+import CurrentBalance from "../CurrentBalance/CurrentBalance";
 
 const Home = () => {
   return (
@@ -15,7 +16,7 @@ const Home = () => {
       <div className="">
         <div className="mt-5">
           <Container>
-            <h2>Current Balance</h2>
+            <CurrentBalance />
             <Row>
               <Col sm={7}>
                 <Transactions />

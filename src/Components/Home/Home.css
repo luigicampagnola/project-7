@@ -3,6 +3,7 @@
   justify-content: center;
 }
 
+
 .current-balance {
   display: flex;
   justify-content: center;
@@ -29,4 +30,9 @@
 
 .b-radius {
   border-radius: 15px;;
+}
+
+.end {
+  display: flex;
+  justify-content: flex-end;
 }
