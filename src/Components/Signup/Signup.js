@@ -10,9 +10,13 @@ const Signup = () => {
     <div>
       <div>
         <h1>signup</h1>
-        <div className="mt-5 sign-up">
-          <Container>
-            <Form.Group as={Row} controlId="formHorizontalEmail">
+        <div>
+          <Container className="sign-up p-5">
+            <Form.Group
+              as={Row}
+              controlId="formHorizontalEmail"
+              className="mb-4"
+            >
               <Form.Label column sm={2}>
                 User
               </Form.Label>

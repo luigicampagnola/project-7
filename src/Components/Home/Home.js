@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import Transactions from "../Transactions/Transactions";
 import "./Home.css";
 import Transfer from "../Transfer/Transfer";
@@ -8,43 +8,39 @@ import Row from "react-bootstrap/Row";
 import Loans from "../Loans/Loans";
 import Close from "../Close/Close";
 import CurrentBalance from "../CurrentBalance/CurrentBalance";
+import { Money } from '../Money/Money';
 
-const Home = () => {
-  return (
-    <div>
-      <h1 className="">home</h1>
-      <div className="">
-        <div className="mt-5">
-          <Container>
-            <CurrentBalance />
-            <Row>
-              <Col sm={7}>
-                <Transactions />
-              </Col>
-              <Col sm={5}>
-                <div className="transaction-color">
-                  <Transfer className="bg-warning shadow-1-strong" />
-                </div>
-                <div className="mt-3 loan-color">
-                  <Loans />
-                </div>
-                <div className="mt-3 close-color">
-                  <Close />
-                </div>
-              </Col>
-            </Row>
-          </Container>
+class Home extends Component {
+  render() {
+    return (
+      <div>
+        <h1 className="">home</h1>
+        <div className="">
+          <div className="mt-5">
+            <Container>
+              <CurrentBalance />
+              <Row>
+                <Col sm={7}>
+                  <Transactions Money={Money}/>
+                </Col>
+                <Col sm={5}>
+                  <div className="transaction-color">
+                    <Transfer className="bg-warning shadow-1-strong" />
+                  </div>
+                  <div className="mt-3 loan-color">
+                    <Loans />
+                  </div>
+                  <div className="mt-3 close-color">
+                    <Close />
+                  </div>
+                </Col>
+              </Row>
+            </Container>
+          </div>
         </div>
-
-        <p>Date and Time</p>
-        <p>Transaction component</p>
-        <p>Transfer Money Component</p>
-        <p>Request Loan Component</p>
-        <p>Close Account Component</p>
-        <p>Calculation component </p>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 export default Home;

@@ -2,7 +2,7 @@ import React from "react";
 import Table from "react-bootstrap/Table";
 import "./Transactions.css";
 
-const Transactions = () => {
+const Transactions = ({ Money }) => {
   return (
     <div>
       <Table striped bordered hover size="sm">
@@ -18,12 +18,12 @@ const Transactions = () => {
         <tbody>
           <tr>
             <td className="p-3">
-              <div className="depo p-1">Deposit</div>
+              <div className="depo p-1">{Money[0].Type}</div>
             </td>
             <td className="p-3 App" colSpan="2">
-              01/06/2021
+              {Money[0].Date}
             </td>
-            <td className="p-3">5,000</td>
+            <td className="p-3">{Money[0].Amount}</td>
           </tr>
           <tr>
             <td className="p-3">
