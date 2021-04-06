@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Transactions from "../Transactions/Transactions";
 import "./Home.css";
 import Transfer from "../Transfer/Transfer";
 import { Container } from "react-bootstrap";
@@ -8,7 +7,7 @@ import Row from "react-bootstrap/Row";
 import Loans from "../Loans/Loans";
 import Close from "../Close/Close";
 import CurrentBalance from "../CurrentBalance/CurrentBalance";
-import { Money } from '../Money/Money';
+import Transactions from "../Transactions/Transactions";
 
 class Home extends Component {
   render() {
@@ -21,7 +20,7 @@ class Home extends Component {
               <CurrentBalance />
               <Row>
                 <Col sm={7}>
-                  <Transactions Money={Money}/>
+                  <Transactions />
                 </Col>
                 <Col sm={5}>
                   <div className="transaction-color">

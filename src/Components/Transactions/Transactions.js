@@ -1,8 +1,9 @@
 import React from "react";
 import Table from "react-bootstrap/Table";
 import "./Transactions.css";
+//import { Money } from "../Money/Money";
 
-const Transactions = ({ Money }) => {
+const Transactions = () => {
   return (
     <div>
       <Table striped bordered hover size="sm">
@@ -18,21 +19,21 @@ const Transactions = ({ Money }) => {
         <tbody>
           <tr>
             <td className="p-3">
-              <div className="depo p-1">{Money[0].Type}</div>
+              <div className="depo p-1">Deposit</div>
             </td>
             <td className="p-3 App" colSpan="2">
-              {Money[0].Date}
+              01 / 06 / 2021
             </td>
-            <td className="p-3">{Money[0].Amount}</td>
+            <td className="p-3">5,000</td>
           </tr>
           <tr>
             <td className="p-3">
               <div className="wit p-1">Withdrawal</div>
             </td>
             <td className="p-3 App" colSpan="2">
-              02/06/2021
+              02 / 06 / 2021
             </td>
-            <td className="p-3">10,000</td>
+            <td className="p-3">10000</td>
           </tr>
           <tr>
             <td className="p-3">
