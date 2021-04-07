@@ -8,13 +8,13 @@ const TransactionsComponents = ({ Money }) => {
         return (
           <Table>
             <tr key={i}>
-              <td>
-                <div>{Money[i].Type}</div>
+              <td className="p-3">
+                <div className="depo p-1">{Money[i].Type}</div>
               </td>
-              <td colSpan="2">
+              <td className="p-3 App" colSpan="2">
                 {Money[i].Date}
               </td>
-              <td>{Money[i].Amount}</td>
+              <td className="p-3">{Money[i].Amount}</td>
             </tr>
           </Table>
         );

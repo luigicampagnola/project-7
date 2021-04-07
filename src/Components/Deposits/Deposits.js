@@ -6,20 +6,18 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
 
-const Transfer = () => {
+const Deposits = ({ depositInputHandler }) => {
   return (
     <div>
       <Container className="p-3">
-        <h4 className="mb-3">Transfer Money</h4>
+        <h4 className="mb-3">Cash Deposits</h4>
         <Row>
-          <Col className='p-3'>
-            <InputGroup size="" className="b-radius">
-              <FormControl />
-            </InputGroup>
-            <div className="App">Transfer to</div>
-          </Col>
-          <Col className='p-3'>
-            <InputGroup size="" className="b-radius">
+          <Col className="p-3">
+            <InputGroup
+              size=""
+              className="b-radius"
+              onChange={depositInputHandler}
+            >
               <InputGroup.Prepend>
                 <InputGroup.Text>$</InputGroup.Text>
               </InputGroup.Prepend>
@@ -28,12 +26,14 @@ const Transfer = () => {
             <div className="App">Amount</div>
           </Col>
         </Row>
-        <div className='App'>
-          <Button variant="light" className=''>Confirm</Button>
+        <div className="App">
+          <Button variant="light" className="mt-2">
+            Confirm
+          </Button>
         </div>
       </Container>
     </div>
   );
 };
 
-export default Transfer;
+export default Deposits;

@@ -6,15 +6,14 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
 
-
-const Loans = () => {
+const Withdrawals = ({ withdrawalsInputHandler }) => {
   return (
     <div>
-      <Container className='p-3'>
-        <h4 className="mb-3">Request Loan</h4>
+      <Container className="p-3">
+        <h4 className="mb-3">Cash Withdrawals</h4>
         <Row>
-          <Col className='p-3'>
-            <InputGroup size="" className="b-radius">
+          <Col className="p-3">
+            <InputGroup size="" className="b-radius" onChange={withdrawalsInputHandler}>
               <InputGroup.Prepend>
                 <InputGroup.Text>$</InputGroup.Text>
               </InputGroup.Prepend>
@@ -23,12 +22,14 @@ const Loans = () => {
             <div className="App">Amount</div>
           </Col>
         </Row>
-        <div className='App'>
-          <Button variant="light" className='mt-2'>Confirm</Button>
+        <div className="App">
+          <Button variant="light" className="">
+            Confirm
+          </Button>
         </div>
       </Container>
     </div>
   );
 };
 
-export default Loans;
+export default Withdrawals;
