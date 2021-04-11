@@ -9,28 +9,32 @@ import Button from "react-bootstrap/Button";
 const Deposits = ({ depositInputHandler, depoClickHandler }) => {
   return (
     <div>
-      <Container className="p-3">
+      <Container className="p-3 ml-4">
         <h4 className="mb-3">Cash Deposits</h4>
         <Row>
-          <Col className="p-3">
+          <Col className="p-3" sm={8}>
             <InputGroup
-              size=""
+              size="sm"
               className="b-radius"
               onChange={depositInputHandler}
             >
               <InputGroup.Prepend>
                 <InputGroup.Text>$</InputGroup.Text>
               </InputGroup.Prepend>
-              <FormControl aria-label="Amount (to the nearest dollar)" />
+              <FormControl
+                aria-label="Amount (to the nearest dollar)"
+                className=""
+              />
             </InputGroup>
             <div className="App">Amount</div>
           </Col>
+          <Col sm={1}>
+            <Button variant="light" className="mt-3" onClick={depoClickHandler} size='sm'>
+            &rarr;  
+            </Button>
+          </Col>
         </Row>
-        <div className="App">
-          <Button variant="light" className="mt-2" onClick={depoClickHandler}>
-            Confirm
-          </Button>
-        </div>
+        <div className="App"></div>
       </Container>
     </div>
   );

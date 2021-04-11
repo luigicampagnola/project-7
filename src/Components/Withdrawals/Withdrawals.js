@@ -9,11 +9,15 @@ import Button from "react-bootstrap/Button";
 const Withdrawals = ({ withdrawalsInputHandler, widthClickHandler }) => {
   return (
     <div>
-      <Container className="p-3">
+      <Container className="p-3 ml-4">
         <h4 className="mb-3">Cash Withdrawals</h4>
         <Row>
-          <Col className="p-3">
-            <InputGroup size="" className="b-radius" onChange={withdrawalsInputHandler}>
+          <Col className="p-3" sm={8}>
+            <InputGroup
+              size="sm"
+              className="b-radius"
+              onChange={withdrawalsInputHandler}
+            >
               <InputGroup.Prepend>
                 <InputGroup.Text>$</InputGroup.Text>
               </InputGroup.Prepend>
@@ -21,12 +25,18 @@ const Withdrawals = ({ withdrawalsInputHandler, widthClickHandler }) => {
             </InputGroup>
             <div className="App">Amount</div>
           </Col>
+          <Col sm={1}>
+            <Button
+              variant="light"
+              className="mt-3"
+              onClick={widthClickHandler}
+              size="sm"
+            >
+              &rarr;
+            </Button>
+          </Col>
         </Row>
-        <div className="App">
-          <Button variant="light" className="" onClick={widthClickHandler}>
-            Confirm
-          </Button>
-        </div>
+        <div className="App"></div>
       </Container>
     </div>
   );
