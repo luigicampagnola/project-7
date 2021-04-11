@@ -6,7 +6,7 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
 
-const Withdrawals = ({ withdrawalsInputHandler }) => {
+const Withdrawals = ({ withdrawalsInputHandler, widthClickHandler }) => {
   return (
     <div>
       <Container className="p-3">
@@ -23,7 +23,7 @@ const Withdrawals = ({ withdrawalsInputHandler }) => {
           </Col>
         </Row>
         <div className="App">
-          <Button variant="light" className="">
+          <Button variant="light" className="" onClick={widthClickHandler}>
             Confirm
           </Button>
         </div>

@@ -6,7 +6,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
 
-const Close = () => {
+const Close = ({ deleteClickHandler, deleteInputHandler }) => {
   return (
     <Container className="p-3">
       <h4 className="mb-3">Delete Account</h4>
@@ -14,7 +14,7 @@ const Close = () => {
         <Form className='p-3'>
           <Form.Row>
             <Form.Group as={Col} controlId="formGriidEmail">
-              <Form.Control className="mt-2" type="email" placeholder="user" />
+              <Form.Control className="mt-2" type="email" placeholder="user" onChange={deleteInputHandler}/>
               <div className="App">Confirm User</div>
             </Form.Group>
             <Form.Group as={Col} controlId="formGridPassword">
@@ -22,6 +22,7 @@ const Close = () => {
                 className="mt-2"
                 type="password"
                 placeholder="PIN"
+                onChange={deleteInputHandler}
               />
               <div className="App">Confirm PIN</div>
             </Form.Group>
@@ -29,7 +30,7 @@ const Close = () => {
         </Form>
       </Row>
       <div className="App">
-        <Button variant="light" className="">
+        <Button variant="light" className="" onClick={deleteClickHandler}>
           Confirm
         </Button>
       </div>

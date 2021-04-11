@@ -18,12 +18,28 @@ class Home extends Component {
     };
   }
 
+  widthClickHandler = () => {
+    console.log('click!')
+  }
+
+  depoClickHandler = () => {
+    console.log('click!')
+  }
+
+  deleteClickHandler = () => {
+    console.log('click!')
+  }
+
   withdrawalsInputHandler = (event) => {
     this.setState({ Withdrawals: event.target.value })
     console.log(event.target.value) 
   };
 
   depositInputHandler = (event) => {
+    console.log(event.target.value);
+  }
+
+  deleteInputHandler = (event) => {
     console.log(event.target.value);
   }
 
@@ -41,13 +57,13 @@ class Home extends Component {
                 </Col>
                 <Col sm={5}>
                   <div className="transaction-color">
-                    <Withdrawals withdrawalsInputHandler={this.withdrawalsInputHandler} className="bg-warning shadow-1-strong" />
+                    <Withdrawals withdrawalsInputHandler={this.withdrawalsInputHandler} widthClickHandler={this.widthClickHandler} className="bg-warning shadow-1-strong" />
                   </div>
                   <div className="mt-3 loan-color">
-                    <Deposits depositInputHandler={this.depositInputHandler}/>
+                    <Deposits depositInputHandler={this.depositInputHandler} depoClickHandler={this.depoClickHandler}/>
                   </div>
                   <div className="mt-3 close-color">
-                    <Close />
+                    <Close deleteInputHandler={this.deleteInputHandler} deleteClickHandler={this.deleteClickHandler}/>
                   </div>
                 </Col>
               </Row>

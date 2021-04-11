@@ -6,7 +6,7 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
 
-const Deposits = ({ depositInputHandler }) => {
+const Deposits = ({ depositInputHandler, depoClickHandler }) => {
   return (
     <div>
       <Container className="p-3">
@@ -27,7 +27,7 @@ const Deposits = ({ depositInputHandler }) => {
           </Col>
         </Row>
         <div className="App">
-          <Button variant="light" className="mt-2">
+          <Button variant="light" className="mt-2" onClick={depoClickHandler}>
             Confirm
           </Button>
         </div>
