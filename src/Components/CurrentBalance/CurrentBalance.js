@@ -9,7 +9,7 @@ const CurrentBalance = () => {
         <Col sm={5}>
           <h3>Current Balance</h3>
         </Col>
-        <Col className='mb-3'>
+        <Col>
             <h2>$21,344.33</h2>
         </Col>
       </Row>

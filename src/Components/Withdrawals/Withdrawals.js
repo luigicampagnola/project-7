@@ -12,7 +12,7 @@ const Withdrawals = ({ withdrawalsInputHandler, widthClickHandler }) => {
       <Container className="p-3 ml-4">
         <h4 className="mb-3">Cash Withdrawals</h4>
         <Row>
-          <Col className="p-3" sm={8}>
+          <Col className="p-3" sm={7}>
             <InputGroup
               size="sm"
               className="b-radius"
@@ -25,10 +25,10 @@ const Withdrawals = ({ withdrawalsInputHandler, widthClickHandler }) => {
             </InputGroup>
             <div className="App">Amount</div>
           </Col>
-          <Col sm={1}>
+          <Col>
             <Button
               variant="light"
-              className="mt-3"
+              className="mt-3 ml-4"
               onClick={widthClickHandler}
               size="sm"
             >

@@ -8,6 +8,7 @@ import Deposits from "../Deposits/Deposits";
 import Close from "../Close/Close";
 import CurrentBalance from "../CurrentBalance/CurrentBalance";
 import TableComponent from "../Table/TableComponent";
+import CurrentTime from "../CurrentTime/CurrentTime";
 
 class Home extends Component {
   constructor() {
@@ -51,6 +52,7 @@ class Home extends Component {
           <div className="mt-5">
             <Container>
               <CurrentBalance />
+              <CurrentTime className='mb-1'/>
               <Row>
                 <Col sm={7}>
                   <TableComponent />

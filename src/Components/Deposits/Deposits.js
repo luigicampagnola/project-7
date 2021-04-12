@@ -12,7 +12,7 @@ const Deposits = ({ depositInputHandler, depoClickHandler }) => {
       <Container className="p-3 ml-4">
         <h4 className="mb-3">Cash Deposits</h4>
         <Row>
-          <Col className="p-3" sm={8}>
+          <Col className="p-3" sm={7}>
             <InputGroup
               size="sm"
               className="b-radius"
@@ -28,9 +28,14 @@ const Deposits = ({ depositInputHandler, depoClickHandler }) => {
             </InputGroup>
             <div className="App">Amount</div>
           </Col>
-          <Col sm={1}>
-            <Button variant="light" className="mt-3" onClick={depoClickHandler} size='sm'>
-            &rarr;  
+          <Col>
+            <Button
+              variant="light"
+              className="mt-3 ml-4"
+              onClick={depoClickHandler}
+              size="sm"
+            >
+              &rarr;
             </Button>
           </Col>
         </Row>
