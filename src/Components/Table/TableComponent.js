@@ -1,9 +1,8 @@
 import React from "react";
 import Table from "react-bootstrap/Table";
 import "./TableComponent.css";
-import { Money } from "../Money/Money";
 
-const TableComponent = () => {
+const TableComponent = ({ Money }) => {
   const renderMovements = (Money, i) => {
     return (
       <tr key={i}>

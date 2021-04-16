@@ -6,7 +6,7 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
 
-const Withdrawals = ({ withdrawalsInputHandler, widthClickHandler }) => {
+const Withdrawals = ({ withdrawalsInputHandler, withdrawalClickHandler }) => {
   return (
     <div>
       <Container className="p-3 ml-4">
@@ -29,7 +29,7 @@ const Withdrawals = ({ withdrawalsInputHandler, widthClickHandler }) => {
             <Button
               variant="light"
               className="mt-3 ml-4"
-              onClick={widthClickHandler}
+              onClick={withdrawalClickHandler}
               size="sm"
             >
               &rarr;

@@ -9,63 +9,94 @@ import Close from "../Close/Close";
 import CurrentBalance from "../CurrentBalance/CurrentBalance";
 import TableComponent from "../Table/TableComponent";
 import CurrentTime from "../CurrentTime/CurrentTime";
-
+/* import { Money } from "../Money/Money";
+ */
 class Home extends Component {
   constructor() {
     super();
     this.state = {
-      Withdrawals: "",
-      Deposits: "",
+      Money: [],
+      WithdrawalsAmount: "",
+      DepositsAmount: "",
     };
   }
+ 
+  withdrawalClickHandler = () => {
+    this.setState({
+      Money: [
+        ...this.state.Money,
+        {
+          Type: "Withdraw",
+          Date: "08/05/21",
+          Amount: this.state.WithdrawalsAmount,
+        },
+      ],
+    });
+    console.log(this.state.Money);
+    console.log(this.state.WithdrawalsAmount);
+  };
 
-  widthClickHandler = () => {
-    console.log('click!')
-  }
+  depositClickHandler = () => {
+    this.setState({
+      Money: [
+        ...this.state.Money,
+        {
+          Type: "Deposit",
+          Date: "08/12/21",
+          Amount: this.state.DepositsAmount,
+        },
+      ],
+    });
+    console.log(this.state.DepositsAmount);
+  };
 
-  depoClickHandler = () => {
-    console.log('click!')
-  }
-
-  deleteClickHandler = () => {
-    console.log('click!')
-  }
+  deleteClickHandler = () => {};
 
   withdrawalsInputHandler = (event) => {
-    this.setState({ Withdrawals: event.target.value })
-    console.log(event.target.value) 
+    this.setState({ WithdrawalsAmount: event.target.value });
   };
 
   depositInputHandler = (event) => {
-    console.log(event.target.value);
-  }
+    this.setState({ DepositsAmount: event.target.value });
+  };
 
   deleteInputHandler = (event) => {
     console.log(event.target.value);
-  }
+  };
 
   render() {
-    return (
+    /*     const addWithdrawal = this.state.Money.push(this.state.Withdrawal);
+     */ return (
       <div>
         <h1 className="">home</h1>
         <div className="">
           <div className="mt-5">
             <Container>
               <CurrentBalance />
-              <CurrentTime className='mb-1'/>
+              <CurrentTime className="mb-1" />
               <Row>
                 <Col sm={7}>
-                  <TableComponent />
+                  <TableComponent Money={this.state.Money} />
                 </Col>
                 <Col sm={5}>
                   <div className="transaction-color">
-                    <Withdrawals withdrawalsInputHandler={this.withdrawalsInputHandler} widthClickHandler={this.widthClickHandler} className="bg-warning shadow-1-strong" />
+                    <Withdrawals
+                      withdrawalsInputHandler={this.withdrawalsInputHandler}
+                      withdrawalClickHandler={this.withdrawalClickHandler}
+                      className="bg-warning shadow-1-strong"
+                    />
                   </div>
-                  <div className="mt-3 loan-color">
-                    <Deposits depositInputHandler={this.depositInputHandler} depoClickHandler={this.depoClickHandler}/>
+                  <div className="mt-2 loan-color">
+                    <Deposits
+                      depositInputHandler={this.depositInputHandler}
+                      depositClickHandler={this.depositClickHandler}
+                    />
                   </div>
-                  <div className="mt-3 close-color">
-                    <Close deleteInputHandler={this.deleteInputHandler} deleteClickHandler={this.deleteClickHandler}/>
+                  <div className="mt-2 close-color">
+                    <Close
+                      deleteInputHandler={this.deleteInputHandler}
+                      deleteClickHandler={this.deleteClickHandler}
+                    />
                   </div>
                 </Col>
               </Row>

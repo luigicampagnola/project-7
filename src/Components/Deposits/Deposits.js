@@ -6,7 +6,7 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
 
-const Deposits = ({ depositInputHandler, depoClickHandler }) => {
+const Deposits = ({ depositInputHandler, depositClickHandler }) => {
   return (
     <div>
       <Container className="p-3 ml-4">
@@ -17,6 +17,7 @@ const Deposits = ({ depositInputHandler, depoClickHandler }) => {
               size="sm"
               className="b-radius"
               onChange={depositInputHandler}
+              id='depoInput'
             >
               <InputGroup.Prepend>
                 <InputGroup.Text>$</InputGroup.Text>
@@ -32,7 +33,7 @@ const Deposits = ({ depositInputHandler, depoClickHandler }) => {
             <Button
               variant="light"
               className="mt-3 ml-4"
-              onClick={depoClickHandler}
+              onClick={depositClickHandler}
               size="sm"
             >
               &rarr;
