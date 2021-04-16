@@ -20,7 +20,7 @@ class Home extends Component {
       DepositsAmount: "",
     };
   }
- 
+
   withdrawalClickHandler = () => {
     this.setState({
       Money: [
@@ -33,7 +33,6 @@ class Home extends Component {
       ],
     });
     console.log(this.state.Money);
-    console.log(this.state.WithdrawalsAmount);
   };
 
   depositClickHandler = () => {
@@ -57,7 +56,11 @@ class Home extends Component {
   };
 
   depositInputHandler = (event) => {
-    this.setState({ DepositsAmount: event.target.value });
+    if (!event.target.value.includes(".")) {
+      return this.setState({ DepositsAmount: `$${event.target.value}.00` });
+    } else {
+      return this.setState({ DepositsAmount: `$${event.target.value}` })
+    }
   };
 
   deleteInputHandler = (event) => {
@@ -72,7 +75,7 @@ class Home extends Component {
         <div className="">
           <div className="mt-5">
             <Container>
-              <CurrentBalance />
+              <CurrentBalance CurrentBalance={this.state.Money} />
               <CurrentTime className="mb-1" />
               <Row>
                 <Col sm={7}>

@@ -2,7 +2,10 @@ import React from "react";
 import { Col } from "react-bootstrap";
 import { Row } from "react-bootstrap";
 
-const CurrentBalance = () => {
+const CurrentBalance = ({ CurrentBalance }) => {
+  const Balance = CurrentBalance.map((mon) => {
+    return `${mon.Amount}`;
+  });
   return (
     <div>
       <Row>
@@ -10,7 +13,7 @@ const CurrentBalance = () => {
           <h3>Current Balance</h3>
         </Col>
         <Col>
-            <h2>$21,344.33</h2>
+          <h2>{Balance}</h2>
         </Col>
       </Row>
     </div>
