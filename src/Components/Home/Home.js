@@ -9,17 +9,21 @@ import Close from "../Close/Close";
 import CurrentBalance from "../CurrentBalance/CurrentBalance";
 import TableComponent from "../Table/TableComponent";
 import CurrentTime from "../CurrentTime/CurrentTime";
-/* import { Money } from "../Money/Money";
- */
+import { Money } from "../Money/Money";
+import TestButton from "../TestButton/TestButton";
+
 class Home extends Component {
   constructor() {
     super();
     this.state = {
-      Money: [],
-      WithdrawalsAmount: "",
-      DepositsAmount: "",
+      Money: Money,
+      CurrentBalance: 0,
+      WithdrawalsAmount: "0",
+      DepositsAmount: "0",
     };
   }
+
+  //Create a function
 
   withdrawalClickHandler = () => {
     this.setState({
@@ -32,8 +36,13 @@ class Home extends Component {
         },
       ],
     });
-    console.log(this.state.Money);
+    console.log(this.state.CurrentBalance);
+
+    /*     console.log(this.state.Money);
+     */
   };
+
+
 
   depositClickHandler = () => {
     this.setState({
@@ -46,7 +55,12 @@ class Home extends Component {
         },
       ],
     });
-    console.log(this.state.DepositsAmount);
+    /*     this.setState({ CurrentBalance: this.state.DepositsAmount })
+     */
+  };
+
+  testButtonHandler = () => {
+    console.log(this.state.Money);
   };
 
   deleteClickHandler = () => {};
@@ -56,11 +70,7 @@ class Home extends Component {
   };
 
   depositInputHandler = (event) => {
-    if (!event.target.value.includes(".")) {
-      return this.setState({ DepositsAmount: `$${event.target.value}.00` });
-    } else {
-      return this.setState({ DepositsAmount: `$${event.target.value}` })
-    }
+    this.setState({ DepositsAmount: event.target.value });
   };
 
   deleteInputHandler = (event) => {
@@ -103,6 +113,7 @@ class Home extends Component {
                   </div>
                 </Col>
               </Row>
+              <TestButton testButtonHandler={this.testButtonHandler} />
             </Container>
           </div>
         </div>

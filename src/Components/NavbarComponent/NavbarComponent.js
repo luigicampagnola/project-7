@@ -11,7 +11,7 @@ const NavbarComponent = () => {
       <Navbar bg="dark" variant="dark">
         <Navbar.Text>Log in to get started</Navbar.Text>
         <Navbar.Collapse className="justify-content-end">
-          <Navbar.Brand href="#home">BankApp</Navbar.Brand>
+          <Navbar.Brand href="#home">Personal Wallet</Navbar.Brand>
         </Navbar.Collapse>
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
