@@ -26,13 +26,19 @@ class Home extends Component {
   //Create a function
 
   withdrawalClickHandler = () => {
+    const Now = new Date();
+    const Day = `${Now.getDate()}`.padStart(2, 0);
+    const Month = `${Now.getMonth() + 1}`.padStart(2, 0);
+    const Year = Now.getFullYear();
+    const Hour = Now.getHours();
+    const Minutes = `${Now.getMinutes()}`.padStart(2, 0);
     this.setState({
       Money: [
         ...this.state.Money,
         {
           Type: "Withdraw",
-          Date: "08/05/21",
-          Amount: this.state.WithdrawalsAmount,
+          Date: `${Month}/${Day}/${Year} at ${Hour}:${Minutes}`,
+          Amount: "-" + this.state.WithdrawalsAmount,
         },
       ],
     });
@@ -42,15 +48,19 @@ class Home extends Component {
      */
   };
 
-
-
   depositClickHandler = () => {
+    const Now = new Date();
+    const Day = `${Now.getDate()}`.padStart(2, 0);
+    const Month = `${Now.getMonth() + 1}`.padStart(2, 0);
+    const Year = Now.getFullYear();
+    const Hour = Now.getHours();
+    const Minutes = `${Now.getMinutes()}`.padStart(2, 0);
     this.setState({
       Money: [
         ...this.state.Money,
         {
           Type: "Deposit",
-          Date: "08/12/21",
+          Date: `${Month}/${Day}/${Year} at ${Hour}:${Minutes}`,
           Amount: this.state.DepositsAmount,
         },
       ],
