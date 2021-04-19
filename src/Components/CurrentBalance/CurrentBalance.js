@@ -15,7 +15,9 @@ const CurrentBalance = ({ CurrentBalance }) => {
     return acc + num;
   });
 
-  const toString = addedAmount + "";
+  const rounded = Math.round(addedAmount * 100) / 100;
+
+  const toString = rounded + "";
 
   /*   const Balance = CurrentBalance.map((mon) => {
     return `${mon.Amount}`;
