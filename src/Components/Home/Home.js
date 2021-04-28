@@ -11,6 +11,9 @@ import TableComponent from "../Table/TableComponent";
 import CurrentTime from "../CurrentTime/CurrentTime";
 import { Money } from "../Money/Money";
 import TestButton from "../TestButton/TestButton";
+import Timer from "../Timer/Timer";
+import In from "../In/In";
+import Out from "../Out/Out";
 
 class Home extends Component {
   constructor() {
@@ -18,12 +21,12 @@ class Home extends Component {
     this.state = {
       Money: Money,
       CurrentBalance: 0,
-      WithdrawalsAmount: "0",
-      DepositsAmount: "0",
+      WithdrawalsAmount: 0,
+      DepositsAmount: 0,
     };
   }
 
-  //Create a function
+  //CLICK HANDLERS
 
   withdrawalClickHandler = () => {
     const Now = new Date();
@@ -38,14 +41,11 @@ class Home extends Component {
         {
           Type: "Withdraw",
           Date: `${Month}/${Day}/${Year} at ${Hour}:${Minutes}`,
-          Amount: "-" + this.state.WithdrawalsAmount,
+          Amount: Number(0 - this.state.WithdrawalsAmount),
         },
       ],
     });
     console.log(this.state.CurrentBalance);
-
-    /*     console.log(this.state.Money);
-     */
   };
 
   depositClickHandler = () => {
@@ -61,12 +61,10 @@ class Home extends Component {
         {
           Type: "Deposit",
           Date: `${Month}/${Day}/${Year} at ${Hour}:${Minutes}`,
-          Amount: this.state.DepositsAmount,
+          Amount: Number(this.state.DepositsAmount),
         },
       ],
     });
-    /*     this.setState({ CurrentBalance: this.state.DepositsAmount })
-     */
   };
 
   testButtonHandler = () => {
@@ -74,6 +72,8 @@ class Home extends Component {
   };
 
   deleteClickHandler = () => {};
+
+  //INPUT HANDLERS
 
   withdrawalsInputHandler = (event) => {
     this.setState({ WithdrawalsAmount: event.target.value });
@@ -88,8 +88,7 @@ class Home extends Component {
   };
 
   render() {
-    /*     const addWithdrawal = this.state.Money.push(this.state.Withdrawal);
-     */ return (
+    return (
       <div>
         <h1 className="">home</h1>
         <div className="">
@@ -121,6 +120,15 @@ class Home extends Component {
                       deleteClickHandler={this.deleteClickHandler}
                     />
                   </div>
+                </Col>
+              </Row>
+              <Row>
+                <Col sm={5}>
+                  <In className="mt-2" />
+                </Col>
+                <Out className="mt-2" />
+                <Col sm={5}>
+                  <Timer />
                 </Col>
               </Row>
               <TestButton testButtonHandler={this.testButtonHandler} />

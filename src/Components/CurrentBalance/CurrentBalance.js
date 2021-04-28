@@ -7,21 +7,14 @@ const CurrentBalance = ({ CurrentBalance }) => {
     return obj.Amount;
   });
 
-  const arrayOfNumbers = arrayAmount.map((num) => {
-    return Number(num);
-  });
-
-  const addedAmount = arrayOfNumbers.reduce((acc, num) => {
-    return acc + num;
+  const addedAmount = arrayAmount.reduce((acc, amount) => {
+    return acc + amount;
   });
 
   const rounded = Math.round(addedAmount * 100) / 100;
 
   const toString = rounded + "";
 
-  /*   const Balance = CurrentBalance.map((mon) => {
-    return `${mon.Amount}`;
-  }); */
   return (
     <div>
       <Row>
@@ -29,7 +22,7 @@ const CurrentBalance = ({ CurrentBalance }) => {
           <h3>Current Balance</h3>
         </Col>
         <Col>
-          <h2>{toString}</h2>
+          <h2>${toString}</h2>
         </Col>
       </Row>
     </div>
