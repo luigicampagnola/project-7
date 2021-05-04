@@ -22,53 +22,58 @@ class Home extends Component {
       Money: Money,
       CurrentBalance: 0,
       WithdrawalsAmount: 0,
-      DepositsAmount: 0,
+      DepositsAmount: [],
+      addedIn: [0],
+      addedOut: [0],
     };
   }
 
   //CLICK HANDLERS
 
-  withdrawalClickHandler = () => {
+  timeHandler = () => {
     const Now = new Date();
     const Day = `${Now.getDate()}`.padStart(2, 0);
     const Month = `${Now.getMonth() + 1}`.padStart(2, 0);
     const Year = Now.getFullYear();
     const Hour = Now.getHours();
     const Minutes = `${Now.getMinutes()}`.padStart(2, 0);
+    return `${Month}/${Day}/${Year} at ${Hour}:${Minutes}`;
+  };
+
+  withdrawalClickHandler = () => {
     this.setState({
       Money: [
         ...this.state.Money,
         {
           Type: "Withdraw",
-          Date: `${Month}/${Day}/${Year} at ${Hour}:${Minutes}`,
-          Amount: Number(0 - this.state.WithdrawalsAmount),
+          Date: this.timeHandler(),
+          Amount: 0 - this.state.WithdrawalsAmount,
         },
       ],
     });
-    console.log(this.state.CurrentBalance);
+    this.setState({
+      addedOut: [...this.state.addedOut, this.state.WithdrawalsAmount],
+    });
   };
 
   depositClickHandler = () => {
-    const Now = new Date();
-    const Day = `${Now.getDate()}`.padStart(2, 0);
-    const Month = `${Now.getMonth() + 1}`.padStart(2, 0);
-    const Year = Now.getFullYear();
-    const Hour = Now.getHours();
-    const Minutes = `${Now.getMinutes()}`.padStart(2, 0);
     this.setState({
       Money: [
         ...this.state.Money,
         {
           Type: "Deposit",
-          Date: `${Month}/${Day}/${Year} at ${Hour}:${Minutes}`,
-          Amount: Number(this.state.DepositsAmount),
+          Date: this.timeHandler(),
+          Amount: this.state.DepositsAmount,
         },
       ],
+    });
+    this.setState({
+      addedIn: [...this.state.addedIn, this.state.DepositsAmount],
     });
   };
 
   testButtonHandler = () => {
-    console.log(this.state.Money);
+    console.log(this.state.addedIn);
   };
 
   deleteClickHandler = () => {};
@@ -76,11 +81,11 @@ class Home extends Component {
   //INPUT HANDLERS
 
   withdrawalsInputHandler = (event) => {
-    this.setState({ WithdrawalsAmount: event.target.value });
+    this.setState({ WithdrawalsAmount: Number(event.target.value) });
   };
 
   depositInputHandler = (event) => {
-    this.setState({ DepositsAmount: event.target.value });
+    this.setState({ DepositsAmount: Number(event.target.value) });
   };
 
   deleteInputHandler = (event) => {
@@ -122,12 +127,16 @@ class Home extends Component {
                   </div>
                 </Col>
               </Row>
+            </Container>
+            <Container>
               <Row>
-                <Col sm={5}>
-                  <In className="mt-2" />
+                <Col sm={3}>
+                  <In className="mt-2" addedIn={this.state.addedIn} addedOut={this.state.addedOut}/>
                 </Col>
-                <Out className="mt-2" />
-                <Col sm={5}>
+                <Col sm={3}>
+{/*                   <Out className="mt-2" addedOut={this.state.addedOut} />
+ */}                </Col>
+                <Col sm={4}>
                   <Timer />
                 </Col>
               </Row>
