@@ -24,6 +24,23 @@
   color: white;
 }
 
+.In {
+  font-weight: 600;
+  font-size: 25px;
+  color: #5cb85c;
+}
+
+.Out {
+  font-weight: 600;
+  font-size: 25px;
+  color: #d9534f;
+}
+
+.Current {
+  font-size: 28px;
+  font-weight: 500;
+}
+
 .App-link {
   color: #61dafb;
 }

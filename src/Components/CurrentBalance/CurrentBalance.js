@@ -19,10 +19,10 @@ const CurrentBalance = ({ CurrentBalance }) => {
     <div>
       <Row>
         <Col sm={5}>
-          <h3>Current Balance</h3>
+          <div className='Current mb-2'>Current Balance</div>
         </Col>
         <Col>
-          <h2>${toString}</h2>
+          <div className='Current mb-2'>${toString}</div >
         </Col>
       </Row>
     </div>

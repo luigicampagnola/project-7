@@ -1,23 +1,37 @@
 import React from "react";
 import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 const In = ({ addedIn, addedOut }) => {
-
-  const addedAmount = addedIn.reduce((acc, amount)=>{
+  const addedAmount = addedIn.reduce((acc, amount) => {
     return acc + amount;
-  })
+  });
 
-  const subAmount = addedOut.reduce((acc, amount)=>{
+  const subAmount = addedOut.reduce((acc, amount) => {
     return acc + amount;
-  })
+  });
+
+  const roundedAddedAmount = Math.round(addedAmount * 100) / 100;
+
+
+  const roundedSubAmount = Math.round(subAmount * 100) / 100;
 
   return (
-    <div>
+    <div className='ml-2'>
       <Row>
-        <h5 className="mt-2">In:</h5>
-        <p className="mt-2 ml-2">{addedAmount}</p>
-         <h5 className="mt-2 ml-5">Out:</h5>
-        <p className="mt-2 ml-2">{subAmount}</p> 
+        <Col>
+          <Row>
+            <div className="mt-1 ml-3 In">In:</div>
+            <div className="mt-1 ml-2 In">{roundedAddedAmount}</div>
+          </Row>
+        </Col>
+
+        <Col>
+          <Row>
+          <div className="mt-1 ml-3 Out">Out:</div>
+            <div className="mt-1 ml-2 Out">{roundedSubAmount}</div>
+          </Row>
+        </Col>
       </Row>
     </div>
   );

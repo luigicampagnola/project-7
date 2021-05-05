@@ -3,11 +3,21 @@ import Table from "react-bootstrap/Table";
 import "./TableComponent.css";
 
 const TableComponent = ({ Money }) => {
+  const colorType = Money.map((obj) => {
+    let colorClass = "p-1 ";
+    if (obj.Type === "Deposit") {
+      colorClass += "depo";
+    } else {
+      colorClass += "wit";
+    }
+    return colorClass;
+  });
+
   const renderMovements = (Money, i) => {
     return (
       <tr key={i}>
         <td className="p-3">
-          <div className="depo p-1">{Money.Type}</div>
+          <div className={colorType}>{Money.Type}</div>
         </td>
         <td className="p-3 App" colSpan="2">
           {Money.Date}

@@ -13,7 +13,6 @@ import { Money } from "../Money/Money";
 import TestButton from "../TestButton/TestButton";
 import Timer from "../Timer/Timer";
 import In from "../In/In";
-import Out from "../Out/Out";
 
 class Home extends Component {
   constructor() {
@@ -130,12 +129,9 @@ class Home extends Component {
             </Container>
             <Container>
               <Row>
-                <Col sm={3}>
+                <Col sm={8}>
                   <In className="mt-2" addedIn={this.state.addedIn} addedOut={this.state.addedOut}/>
                 </Col>
-                <Col sm={3}>
-{/*                   <Out className="mt-2" addedOut={this.state.addedOut} />
- */}                </Col>
                 <Col sm={4}>
                   <Timer />
                 </Col>

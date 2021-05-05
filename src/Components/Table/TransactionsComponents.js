@@ -8,7 +8,7 @@ const TransactionsComponents = ({ Money }) => {
         return (
           <Table>
             <tr key={i}>
-              <td className="p-3">
+              <td>
                 <div className="depo p-1">{Money[i].Type}</div>
               </td>
               <td className="p-3 App" colSpan="2">
