@@ -4,7 +4,7 @@ import './RegisterButton.css';
 const RegisterButton = () => {
   return (
     <div>
-      <button className='button'>Register</button>
+      <button className='button'>Submit</button>
     </div>
   );
 };
