@@ -94,7 +94,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <h1 className="">home</h1>
+        <div className="">home</div>
         <div className="">
           <div className="mt-5">
             <Container>
@@ -130,7 +130,11 @@ class Home extends Component {
             <Container>
               <Row>
                 <Col sm={8}>
-                  <In className="mt-2" addedIn={this.state.addedIn} addedOut={this.state.addedOut}/>
+                  <In
+                    className="mt-2"
+                    addedIn={this.state.addedIn}
+                    addedOut={this.state.addedOut}
+                  />
                 </Col>
                 <Col sm={4}>
                   <Timer />
