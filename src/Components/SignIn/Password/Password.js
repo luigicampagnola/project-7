@@ -5,9 +5,9 @@ const Password = () => {
   return (
     <div>
       <Form>
-        <Form.Group>
+        <Form.Group controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>
-          <Form.Control type="passwod" />
+          <Form.Control type="Password" />
         </Form.Group>
       </Form>
     </div>

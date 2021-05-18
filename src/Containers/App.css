@@ -7,6 +7,10 @@
   pointer-events: none;
 }
 
+.nav-title {
+  margin-left: 650px;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -62,4 +66,8 @@
   border-color: black;
   border-radius: 15px;
   background-color: rgb(240, 234, 234);
+}
+
+.Dropdown {
+  margin-left: auto;
 }
