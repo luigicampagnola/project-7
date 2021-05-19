@@ -1,5 +1,6 @@
 import React from "react";
 import { Navbar, NavDropdown } from "react-bootstrap";
+import { DoorOpenFill, MoonFill } from "react-bootstrap-icons";
 
 const NavbarUser = () => {
   return (
@@ -7,10 +8,21 @@ const NavbarUser = () => {
       <Navbar.Text>
         Signed in as: <a href="#login">Mark Otto</a>
       </Navbar.Text>
-        <NavDropdown alignRight>
-          <NavDropdown.Item>Action</NavDropdown.Item>
-          <NavDropdown.Item>Action</NavDropdown.Item>
-        </NavDropdown>
+      <NavDropdown alignRight>
+        <div>
+          <NavDropdown.Item className="d-flex">
+            <MoonFill className="mt-1 mr-1"></MoonFill>
+            <div className="pl-1">Nite Mode</div>
+          </NavDropdown.Item>
+        </div>
+        <NavDropdown.Divider />
+        <div>
+          <NavDropdown.Item className="d-flex">
+            <DoorOpenFill className="mt-1 mr-1"></DoorOpenFill>
+            <div className="pl-1">Logout</div>
+            </NavDropdown.Item>
+        </div>
+      </NavDropdown>
     </div>
   );
 };
