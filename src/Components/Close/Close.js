@@ -3,15 +3,15 @@ import { Container } from "react-bootstrap";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
+import DeleteButton from "./Button/Button";
 
 
 const Close = ({ deleteClickHandler, deleteInputHandler }) => {
   return (
     <Container className="p-3">
-      <h4 className="mb-3 ml-4">Delete Account</h4>
+      <div className="mb-3 ml-3 component-title">Delete Account</div>
       <Row className='ml-2'>
-        <Form className='p-3'>
+        <Form className='p-2'>
           <Form.Row>
             <Form.Group as={Col} controlId="formGriidEmail2">
               <Form.Control className="mt-2" size='sm' type="email" placeholder="user" onChange={deleteInputHandler}/>
@@ -31,9 +31,7 @@ const Close = ({ deleteClickHandler, deleteInputHandler }) => {
         </Form>
       </Row>
       <div className="App">
-        <Button variant="light" className="mt-1" onClick={deleteClickHandler}>
-          Confirm
-        </Button>
+        <DeleteButton />
       </div>
     </Container>
   );
