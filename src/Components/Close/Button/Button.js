@@ -1,10 +1,10 @@
 import React from "react";
-import './Button.css';
+import "./Button.css";
 
-const DeleteButton = () => {
+const DeleteButton = ({ deleteClickHandler }) => {
   return (
-    <div className='mr-4'>
-      <button className='delete-btn'>Submit</button>
+    <div className="mr-4">
+      <button className="delete-btn" onClick={deleteClickHandler}>Submit</button>
     </div>
   );
 };

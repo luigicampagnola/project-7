@@ -33,7 +33,7 @@ const Deposits = ({ depositInputHandler, depositClickHandler }) => {
             <div className="App">Amount</div>
           </Col>
           <Col>
-            <DepositButton />
+            <DepositButton depositClickHandler={depositClickHandler}/>
           </Col>
         </Row>
         <div className="App"></div>

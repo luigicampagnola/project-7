@@ -30,7 +30,7 @@ const Withdrawals = ({ withdrawalsInputHandler, withdrawalClickHandler }) => {
             <div className="App">Amount</div>
           </Col>
           <Col>
-            <WithdrawalButton />
+            <WithdrawalButton withdrawalClickHandler={withdrawalClickHandler}/>
           </Col>
         </Row>
         <div className="App"></div>

@@ -1,13 +1,14 @@
 import React from "react";
-import './Button.css'
-import { ArrowRight } from 'react-bootstrap-icons';
+import "./Button.css";
+import { ArrowRight } from "react-bootstrap-icons";
 
-
-const DepositButton = () => {
+const DepositButton = ({ depositClickHandler }) => {
   return (
     <div>
       <div>
-        <button className='depo-btn'><ArrowRight></ArrowRight></button>
+        <button className="depo-btn" onClick={depositClickHandler}>
+          <ArrowRight></ArrowRight>
+        </button>
       </div>
     </div>
   );

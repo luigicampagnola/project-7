@@ -31,7 +31,7 @@ const Close = ({ deleteClickHandler, deleteInputHandler }) => {
         </Form>
       </Row>
       <div className="App">
-        <DeleteButton />
+        <DeleteButton deleteClickHandler={deleteClickHandler}/>
       </div>
     </Container>
   );

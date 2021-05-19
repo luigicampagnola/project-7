@@ -1,13 +1,14 @@
 import React from "react";
-import './Button.css'
-import { ArrowRight } from 'react-bootstrap-icons';
+import "./Button.css";
+import { ArrowRight } from "react-bootstrap-icons";
 
-
-const WithdrawalButton = () => {
+const WithdrawalButton = ({ withdrawalClickHandler }) => {
   return (
     <div>
       <div>
-        <button className='with-btn'><ArrowRight></ArrowRight></button>
+        <button className="with-btn" onClick={withdrawalClickHandler}>
+          <ArrowRight></ArrowRight>
+        </button>
       </div>
     </div>
   );
