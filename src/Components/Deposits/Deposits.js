@@ -4,7 +4,9 @@ import InputGroup from "react-bootstrap/InputGroup";
 import { Container } from "react-bootstrap";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import Button from "react-bootstrap/Button";
+import DepositButton from "./Button/Button";
+import { CurrencyDollar } from 'react-bootstrap-icons';
+
 
 const Deposits = ({ depositInputHandler, depositClickHandler }) => {
   return (
@@ -12,7 +14,7 @@ const Deposits = ({ depositInputHandler, depositClickHandler }) => {
       <Container className="p-3 ml-4">
         <h4 className="mb-3">Cash Deposits</h4>
         <Row>
-          <Col className="p-3" sm={7}>
+          <Col className="p-3" sm={8}>
             <InputGroup
               size="sm"
               className="b-radius"
@@ -20,7 +22,7 @@ const Deposits = ({ depositInputHandler, depositClickHandler }) => {
               id='depoInput'
             >
               <InputGroup.Prepend>
-                <InputGroup.Text>$</InputGroup.Text>
+                <InputGroup.Text><CurrencyDollar /></InputGroup.Text>
               </InputGroup.Prepend>
               <FormControl
                 aria-label="Amount (to the nearest dollar)"
@@ -30,14 +32,7 @@ const Deposits = ({ depositInputHandler, depositClickHandler }) => {
             <div className="App">Amount</div>
           </Col>
           <Col>
-            <Button
-              variant="light"
-              className="mt-3 ml-4"
-              onClick={depositClickHandler}
-              size="sm"
-            >
-              &rarr;
-            </Button>
+            <DepositButton />
           </Col>
         </Row>
         <div className="App"></div>

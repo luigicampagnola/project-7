@@ -4,7 +4,10 @@ import InputGroup from "react-bootstrap/InputGroup";
 import { Container } from "react-bootstrap";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import Button from "react-bootstrap/Button";
+import WithdrawalButton from "./Button/Button";
+import "./Withdrawals.css";
+import { CurrencyDollar } from 'react-bootstrap-icons';
+
 
 const Withdrawals = ({ withdrawalsInputHandler, withdrawalClickHandler }) => {
   return (
@@ -12,28 +15,23 @@ const Withdrawals = ({ withdrawalsInputHandler, withdrawalClickHandler }) => {
       <Container className="p-3 ml-4">
         <h4 className="mb-3">Cash Withdrawals</h4>
         <Row>
-          <Col className="p-3" sm={7}>
+          <Col className="p-3" sm={8}>
             <InputGroup
               size="sm"
               className="b-radius"
               onChange={withdrawalsInputHandler}
             >
               <InputGroup.Prepend>
-                <InputGroup.Text>$</InputGroup.Text>
+                <InputGroup.Text>
+                <CurrencyDollar />
+                </InputGroup.Text>
               </InputGroup.Prepend>
               <FormControl aria-label="Amount (to the nearest dollar)" />
             </InputGroup>
             <div className="App">Amount</div>
           </Col>
           <Col>
-            <Button
-              variant="light"
-              className="mt-3 ml-4"
-              onClick={withdrawalClickHandler}
-              size="sm"
-            >
-              &rarr;
-            </Button>
+            <WithdrawalButton />
           </Col>
         </Row>
         <div className="App"></div>
