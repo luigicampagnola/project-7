@@ -6,7 +6,7 @@ import "./SignIn.css";
 import SignInButton from "./SignInButton/SignInButton";
 import SignInTitle from "./SignInTitle/SignInTitle";
 
-const SignIn = () => {
+const SignIn = ({ onRouteChange }) => {
   return (
     <div>
       <Container>
@@ -14,7 +14,7 @@ const SignIn = () => {
           <SignInTitle />
           <Email />
           <Password />
-          <SignInButton />
+          <SignInButton onRouteChange={onRouteChange}/>
         </div>
       </Container>
     </div>

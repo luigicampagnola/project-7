@@ -1,10 +1,12 @@
 import React from "react";
-import './SignInButton.css'
+import "./SignInButton.css";
 
-const SignInButton = () => {
+const SignInButton = ({ onRouteChange }) => {
   return (
     <div>
-      <button className='signin-btn'>Sign In</button>
+      <button className="signin-btn" onClick={() => onRouteChange("home")}>
+        Sign In
+      </button>
     </div>
   );
 };

@@ -53,7 +53,21 @@
   font-size: 1.5rem;
   font-weight: 600;
 }
+.nav-user-p {
+  padding: 1.85px;
+}
 
+.reg-btn{
+  background-color: transparent;
+  border: none;
+  color: white;
+  text-decoration: underline;
+  font-size: large;
+}
+
+.nav-shadow {
+  box-shadow: 5px 5px 5px rgb(173, 173, 173);
+}
 
 @keyframes App-logo-spin {
   from {
@@ -64,9 +78,7 @@
   }
 }
 
-.bg-color {
-  background-color: #f7f7f7;
-}
+
 
 .sign-up {
   border-color: black;
@@ -77,3 +89,4 @@
 .Dropdown {
   margin-left: auto;
 }
+

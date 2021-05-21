@@ -7,7 +7,7 @@ import RegisterButton from "./RegisterButton/RegisterButton";
 import "./Register.css";
 import Title from "./Title/Title";
 
-const Register = () => {
+const Register = ({ onRouteChange }) => {
   return (
     <div className="">
       <Container>
@@ -16,7 +16,7 @@ const Register = () => {
           <Name />
           <Email />
           <Password />
-          <RegisterButton />
+          <RegisterButton onRouteChange={onRouteChange} />
         </div>
       </Container>
     </div>

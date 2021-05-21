@@ -6,13 +6,35 @@ import Register from "../Components/Register/Register";
 import SignIn from "../Components/SignIn/SignIn";
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      route: "signin",
+      isSignedIn: false,
+    };
+  }
+
+  onRouteChange = (route) => {
+    if (route === 'signout') {
+      this.setState({isSignedIn: false})
+    } else if (route === 'home'){
+      this.setState({isSignedIn: true})
+    }
+    this.setState({ route: route });
+  };
   render() {
     return (
-      <div className="bg-color">
-        <NavbarComponent />
-        <SignIn />
-        <Register />
-        <Home />
+      <div>
+        <NavbarComponent onRouteChange={this.onRouteChange} isSignedIn={this.state.isSignedIn}/>
+        {this.state.route === "home" ? (
+          <Home />
+          ) : (
+            this.state.route === 'signin' ?
+          <SignIn onRouteChange={this.onRouteChange} />
+          : 
+          <Register onRouteChange={this.onRouteChange}/> 
+        )}
+          
       </div>
     );
   }
