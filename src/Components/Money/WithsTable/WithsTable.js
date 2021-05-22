@@ -1,6 +1,6 @@
 export const WithsTable = [
     {
-      Type: "Withdrawal",
+      Type: "Withdraw",
       Date: "05/06/2021",
       Amount: -150,
     }, 

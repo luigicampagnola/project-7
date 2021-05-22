@@ -2,7 +2,7 @@ import React from "react";
 import Table from "react-bootstrap/Table";
 import "./TableComponent.css";
 
-const TableComponent = ({ Money }) => {
+const TableComponent = ({ Money, Depos, Withs }) => {
   const colorType = Money.map((obj) => {
     let colorClass = "p-1 ";
     if (obj.Type === "Deposit") {
@@ -13,6 +13,9 @@ const TableComponent = ({ Money }) => {
     return colorClass;
   });
 
+  const testColor = () =>{
+    console.log('test')
+  }
   const renderMovements = (Money, i) => {
     return (
       <tr key={i}>
@@ -41,6 +44,7 @@ const TableComponent = ({ Money }) => {
         </thead>
         <tbody>{Money.map(renderMovements)}</tbody>
       </Table>
+      <button onClick={testColor}>Test Color</button>
     </div>
   );
 };

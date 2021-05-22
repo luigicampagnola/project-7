@@ -78,7 +78,7 @@ class Home extends Component {
 
   //Test Button
   testButtonHandler = () => {
-    console.log(this.state.Withs);
+    console.log(this.state.Depos);
   };
 
   deleteClickHandler = () => {};
@@ -108,7 +108,8 @@ class Home extends Component {
               <CurrentTime className="mb-1" />
               <Row>
                 <Col sm={7}>
-                  <TableComponent Money={this.state.Money} />
+                  <TableComponent Money={this.state.Money} Depos={this.state.Depos}
+                  Withs={this.state.Withs}/>
                 </Col>
                 <Col sm={5}>
                   <div className="transaction-color">
