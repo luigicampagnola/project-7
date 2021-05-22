@@ -13,6 +13,8 @@ import { Money } from "../Money/Money";
 import TestButton from "../TestButton/TestButton";
 import Timer from "../Timer/Timer";
 import In from "../In/In";
+import { DeposTable } from "../Money/DeposTable/DeposTable";
+import { WithsTable } from "../Money/WithsTable/WithsTable";
 
 class Home extends Component {
   constructor() {
@@ -24,11 +26,12 @@ class Home extends Component {
       DepositsAmount: [],
       addedIn: [0],
       addedOut: [0],
+      Depos: DeposTable,
+      Withs: WithsTable,
     };
   }
 
-  //CLICK HANDLERS
-
+  //Date and Time function
   timeHandler = () => {
     const Now = new Date();
     const Day = `${Now.getDate()}`.padStart(2, 0);
@@ -38,6 +41,8 @@ class Home extends Component {
     const Minutes = `${Now.getMinutes()}`.padStart(2, 0);
     return `${Month}/${Day}/${Year} at ${Hour}:${Minutes}`;
   };
+
+  //CLICK HANDLERS
 
   withdrawalClickHandler = () => {
     this.setState({
@@ -71,8 +76,9 @@ class Home extends Component {
     });
   };
 
+  //Test Button
   testButtonHandler = () => {
-    console.log(this.state.addedIn);
+    console.log(this.state.Withs);
   };
 
   deleteClickHandler = () => {};
