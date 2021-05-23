@@ -1,6 +1,8 @@
 import React from "react";
 import { Col } from "react-bootstrap";
 import { Row } from "react-bootstrap";
+import { CurrencyDollar } from "react-bootstrap-icons";
+
 
 const CurrentBalance = ({ CurrentBalance }) => {
   const arrayAmount = CurrentBalance.map((obj) => {
@@ -19,10 +21,13 @@ const CurrentBalance = ({ CurrentBalance }) => {
     <div>
       <Row>
         <Col sm={5}>
-          <div className='Current mb-2'>Current Balance</div>
+          <div className="Current mb-2">Current Balance</div>
         </Col>
         <Col>
-          <div className='Current mb-2'>${toString}</div >
+          <div className="Current d-flex">
+            <CurrencyDollar className="mt-2"/>
+            {toString}
+          </div>
         </Col>
       </Row>
     </div>

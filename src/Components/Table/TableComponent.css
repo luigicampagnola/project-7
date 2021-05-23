@@ -3,6 +3,11 @@
   color: white;
   border-radius: 15px;
   text-align: center;  
+  border: none;
+  margin-right: 15%;
+  margin-left: 15%;
+
+
 }
 
 .wit {
@@ -10,4 +15,7 @@
   color: white;
   border-radius: 15px;
   text-align: center;
+  border: none;
+  margin-right: 15%;
+  margin-left: 15%;
 }

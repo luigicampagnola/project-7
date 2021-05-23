@@ -1,7 +1,7 @@
 export const Money = [
   {
     Type: "Deposit",
-    Date: "01/06/2021",
+    Date: "05/23/2021 at 17:11",
     Amount: 0,
   }, 
 ];
