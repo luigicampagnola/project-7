@@ -13,8 +13,6 @@ import { Money } from "../Money/Money";
 import TestButton from "../TestButton/TestButton";
 import Timer from "../Timer/Timer";
 import In from "../In/In";
-import { DeposTable } from "../Money/DeposTable/DeposTable";
-import { WithsTable } from "../Money/WithsTable/WithsTable";
 
 class Home extends Component {
   constructor() {
@@ -26,8 +24,6 @@ class Home extends Component {
       DepositsAmount: [],
       addedIn: [0],
       addedOut: [0],
-      Depos: DeposTable,
-      Withs: WithsTable,
     };
   }
 
@@ -78,7 +74,7 @@ class Home extends Component {
 
   //Test Button
   testButtonHandler = () => {
-    console.log(this.state.Depos);
+    console.log(this.state.Withs);
   };
 
   deleteClickHandler = () => {};
@@ -108,8 +104,7 @@ class Home extends Component {
               <CurrentTime className="mb-1" />
               <Row>
                 <Col sm={7}>
-                  <TableComponent Money={this.state.Money} Depos={this.state.Depos}
-                  Withs={this.state.Withs}/>
+                  <TableComponent Money={this.state.Money} />
                 </Col>
                 <Col sm={5}>
                   <div className="transaction-color">

@@ -2,25 +2,23 @@ import React from "react";
 import Table from "react-bootstrap/Table";
 import "./TableComponent.css";
 
-const TableComponent = ({ Money, Depos, Withs }) => {
-  const colorType = Money.map((obj) => {
+const TableComponent = ({ Money }) => {
+  const colorType = (movement) => {
     let colorClass = "p-1 ";
-    if (obj.Type === "Deposit") {
+    if (movement.Type === "Deposit") {
       colorClass += "depo";
     } else {
       colorClass += "wit";
     }
     return colorClass;
-  });
+  };
 
-  const testColor = () =>{
-    console.log('test')
-  }
+
   const renderMovements = (Money, i) => {
     return (
       <tr key={i}>
         <td className="p-3">
-          <div className={colorType}>{Money.Type}</div>
+          <div className={colorType(Money)}>{Money.Type}</div>
         </td>
         <td className="p-3 App" colSpan="2">
           {Money.Date}
@@ -44,7 +42,6 @@ const TableComponent = ({ Money, Depos, Withs }) => {
         </thead>
         <tbody>{Money.map(renderMovements)}</tbody>
       </Table>
-      <button onClick={testColor}>Test Color</button>
     </div>
   );
 };
