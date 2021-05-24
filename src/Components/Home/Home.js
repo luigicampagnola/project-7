@@ -10,10 +10,9 @@ import CurrentBalance from "../CurrentBalance/CurrentBalance";
 import TableComponent from "../Table/TableComponent";
 import CurrentTime from "../CurrentTime/CurrentTime";
 import { Money } from "../Money/Money";
-import TestButton from "../TestButton/TestButton";
-import Timer from "../Timer/Timer";
+/* import TestButton from "../TestButton/TestButton";
+ */ import Timer from "../Timer/Timer";
 import In from "../In/In";
-
 
 class Home extends Component {
   constructor() {
@@ -74,9 +73,9 @@ class Home extends Component {
   };
 
   //Test Button
-  testButtonHandler = () => {
+  /*   testButtonHandler = () => {
     console.log(this.state.Withs);
-  };
+  }; */
 
   deleteClickHandler = () => {};
 
@@ -97,7 +96,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <div className="">
+        <div className="mb-5">
           <div className="mt-5">
             <Container>
               <CurrentBalance CurrentBalance={this.state.Money} />
@@ -139,10 +138,18 @@ class Home extends Component {
                   />
                 </Col>
                 <Col sm={4}>
-                  <Timer />
+                 <Timer />
+                 
+{/*                   <div className="mt-2 bg p-2">
+                    <div className="timer mr-4">
+                      You will be logged out in{" "}
+                      <Countdown date={Date.now() + 5000} renderer={renderer} />
+                  </div>
+                    </div> */}
                 </Col>
               </Row>
-              <TestButton testButtonHandler={this.testButtonHandler} />
+              {/*               <TestButton testButtonHandler={this.testButtonHandler} />
+               */}{" "}
             </Container>
           </div>
         </div>
