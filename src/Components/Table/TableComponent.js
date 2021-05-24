@@ -1,5 +1,6 @@
 import React from "react";
 import Table from "react-bootstrap/Table";
+import Scroll from "../Scroll/Scroll";
 import "./TableComponent.css";
 
 const TableComponent = ({ Money }) => {
@@ -12,7 +13,6 @@ const TableComponent = ({ Money }) => {
     }
     return colorClass;
   };
-
 
   const renderMovements = (Money, i) => {
     return (
@@ -30,18 +30,20 @@ const TableComponent = ({ Money }) => {
 
   return (
     <div>
-      <Table striped bordered hover size="sm">
-        <thead>
-          <tr>
-            <th className="p-2 App">Transaction</th>
-            <th className="p-2 App" colSpan="2">
-              Date
-            </th>
-            <th className="p-2 App">Amount</th>
-          </tr>
-        </thead>
-        <tbody>{Money.map(renderMovements)}</tbody>
-      </Table>
+      <Scroll>
+        <Table striped bordered hover size="sm">
+          <thead>
+            <tr>
+              <th className="p-2 App sticky">Transaction</th>
+              <th className="p-2 App sticky" colSpan="2">
+                Date
+              </th>
+              <th className="p-2 App sticky">Amount</th>
+            </tr>
+          </thead>
+          <tbody>{Money.map(renderMovements)}</tbody>
+        </Table>
+      </Scroll>
     </div>
   );
 };

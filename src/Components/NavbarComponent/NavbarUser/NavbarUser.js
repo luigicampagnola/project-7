@@ -38,7 +38,7 @@ const NavbarUser = ({ onRouteChange, isSignedIn }) => {
     return (
       <div className="NavbarUser d-flex mr-2">
         <Navbar.Text>
-          <button className="reg-btn" onClick={() => onRouteChange("signin")}>
+          <button className="reg-btn mr-2" onClick={() => onRouteChange("signin")}>
             Sign In
           </button>
           <button className="reg-btn" onClick={() => onRouteChange("Register")}>

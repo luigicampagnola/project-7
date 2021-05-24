@@ -40,6 +40,17 @@
   color: #d9534f;
 }
 
+.div-scroll {
+  overflow-y: scroll;
+  width: 100%;
+  margin-right: 0%;
+  height: 580px;
+}
+
+.sticky {
+  position: sticky;
+}
+
 .Current {
   font-size: 28px;
   font-weight: 500;
@@ -57,7 +68,7 @@
   padding: 1.85px;
 }
 
-.reg-btn{
+.reg-btn {
   background-color: transparent;
   border: none;
   color: white;
@@ -78,8 +89,6 @@
   }
 }
 
-
-
 .sign-up {
   border-color: black;
   border-radius: 15px;
@@ -89,4 +98,3 @@
 .Dropdown {
   margin-left: auto;
 }
-
