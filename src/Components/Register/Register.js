@@ -1,5 +1,5 @@
 import React from "react";
-import { Container } from "react-bootstrap";
+import { Col, Form, Row } from "react-bootstrap";
 import Email from "./Email/Email";
 import Name from "./Name/Name";
 import Password from "./Password/Password";
@@ -9,16 +9,19 @@ import Title from "./Title/Title";
 
 const Register = ({ onRouteChange }) => {
   return (
-    <div className="">
-      <Container>
-        <div className="form">
-          <Title />
-          <Name />
-          <Email />
-          <Password />
-          <RegisterButton onRouteChange={onRouteChange} />
-        </div>
-      </Container>
+    <div>
+      <Row>
+        <Col sm={4}></Col>
+        <Col sm={4}>
+          <Form className="form">
+            <Title />
+            <Name />
+            <Email />
+            <Password />
+            <RegisterButton onRouteChange={onRouteChange} />
+          </Form>
+        </Col>
+      </Row>
     </div>
   );
 };

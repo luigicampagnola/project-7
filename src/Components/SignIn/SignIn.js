@@ -1,5 +1,5 @@
 import React from "react";
-import { Container } from "react-bootstrap";
+import { Form, Col, Row } from "react-bootstrap";
 import Email from "./Email/Email";
 import Password from "./Password/Password";
 import "./SignIn.css";
@@ -9,14 +9,17 @@ import SignInTitle from "./SignInTitle/SignInTitle";
 const SignIn = ({ onRouteChange }) => {
   return (
     <div>
-      <Container>
-        <div className="signin">
-          <SignInTitle />
-          <Email />
-          <Password />
-          <SignInButton onRouteChange={onRouteChange}/>
-        </div>
-      </Container>
+      <Row>
+        <Col sm={4}></Col>
+        <Col sm={4}>
+          <Form className="signin">
+            <SignInTitle />
+            <Email />
+            <Password />
+            <SignInButton onRouteChange={onRouteChange} />
+          </Form>
+        </Col>
+      </Row>
     </div>
   );
 };
