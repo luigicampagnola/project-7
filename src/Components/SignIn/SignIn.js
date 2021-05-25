@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Col, Row } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 import Email from "./Email/Email";
 import Password from "./Password/Password";
 import "./SignIn.css";
@@ -12,12 +12,12 @@ const SignIn = ({ onRouteChange }) => {
       <Row>
         <Col sm={4}></Col>
         <Col sm={4}>
-          <Form className="signin">
+          <div className="signin">
             <SignInTitle />
             <Email />
             <Password />
             <SignInButton onRouteChange={onRouteChange} />
-          </Form>
+          </div>
         </Col>
       </Row>
     </div>
