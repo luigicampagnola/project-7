@@ -17,7 +17,7 @@ const TableComponent = ({ Money }) => {
   const renderMovements = (Money, i) => {
     return (
       <tr key={i}>
-        <td className="p-3">
+        <td className="p-3" >
           <div className={colorType(Money)}>{Money.Type}</div>
         </td>
         <td className="p-3 App" colSpan="2">

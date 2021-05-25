@@ -12,7 +12,7 @@ const TitleNav = () => {
         height="30"
         className="d-inlineblock align-top"
       />{' '}
-      Personal Wallter
+       Wallter
     </Navbar.Brand>
   );
 };
