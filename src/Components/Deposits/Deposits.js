@@ -10,7 +10,7 @@ import { CurrencyDollar } from "react-bootstrap-icons";
 const Deposits = ({ depositInputHandler, depositClickHandler }) => {
   return (
     <div>
-      <Container className="p-3 ml-4">
+      <Container className="p-3 ml-2">
         <div className="mb-3 component-title">Cash Deposits</div>
         <Row>
           <Col className="p-3" sm={8}>
@@ -18,7 +18,6 @@ const Deposits = ({ depositInputHandler, depositClickHandler }) => {
               size="sm"
               className="b-radius"
               onChange={depositInputHandler}
-              id="depoInput"
             >
               <InputGroup.Prepend>
                 <InputGroup.Text>

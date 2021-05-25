@@ -11,7 +11,7 @@ import { CurrencyDollar } from 'react-bootstrap-icons';
 const Withdrawals = ({ withdrawalsInputHandler, withdrawalClickHandler }) => {
   return (
     <div>
-      <Container className="p-3 ml-4">
+      <Container className="p-3 ml-2">
         <div className="mb-3 component-title">Cash Withdrawals</div>
         <Row>
           <Col className="p-3" sm={8}>
