@@ -6,24 +6,33 @@ import Password from "./Password/Password";
 import RegisterButton from "./RegisterButton/RegisterButton";
 import "./Register.css";
 import Title from "./Title/Title";
+import { Component } from "react";
 
-const Register = ({ onRouteChange }) => {
-  return (
-    <div>
-      <Row>
-        <Col sm={4}></Col>
-        <Col sm={4}>
-          <div className="reg-form">
-            <Title />
-            <Name />
-            <Email />
-            <Password />
-            <RegisterButton onRouteChange={onRouteChange} />
-          </div>
-        </Col>
-      </Row>
-    </div>
-  );
-};
+class Register extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  render() {
+    const { onRouteChange } = this.props;
+    return (
+      <div>
+        <Row>
+          <Col sm={4}></Col>
+          <Col sm={4}>
+            <div className="reg-form">
+              <Title />
+              <Name />
+              <Email />
+              <Password />
+              <RegisterButton onRouteChange={onRouteChange} />
+            </div>
+          </Col>
+        </Row>
+      </div>
+    );
+  }
+}
 
 export default Register;
