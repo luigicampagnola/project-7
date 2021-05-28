@@ -70,7 +70,7 @@ class App extends Component {
         {this.state.route === "home" ? (
           <Home />
         ) : this.state.route === "signin" ? (
-          <SignIn onRouteChange={this.onRouteChange} />
+          <SignIn loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
         ) : (
           <Register
             loadUser={this.loadUser}
