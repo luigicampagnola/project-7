@@ -11,11 +11,45 @@ import { Component } from "react";
 class Register extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      registerEmail: "",
+      registerPassword: "",
+      registerName: "",
+    };
   }
 
+  onNameChange = (event) => {
+    this.setState({ registerName: event.target.value });
+  };
+
+  onEmailChange = (event) => {
+    this.setState({ registerEmail: event.target.value });
+  };
+
+  onPasswordChange = (event) => {
+    this.setState({ registerPassword: event.target.value });
+  };
+
+  onSubmitRegister = () => {
+    fetch("http://localhost:3000/register", {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        email: this.state.registerEmail,
+        password: this.state.registerPassword,
+        name: this.state.registerName,
+      }),
+    })
+      .then((response) => response.json())
+      .then((user) => {
+        if (user) {
+          this.props.loadUser(user);
+          this.props.onRouteChange("home");
+        }
+      });
+  };
+
   render() {
-    const { onRouteChange } = this.props;
     return (
       <div>
         <Row>
@@ -23,10 +57,10 @@ class Register extends Component {
           <Col sm={4}>
             <div className="reg-form">
               <Title />
-              <Name />
-              <Email />
-              <Password />
-              <RegisterButton onRouteChange={onRouteChange} />
+              <Name onNameChange={this.onNameChange} />
+              <Email onEmailChange={this.onEmailChange} />
+              <Password onPasswordChange={this.onPasswordChange} />
+              <RegisterButton onSubmitRegister={this.onSubmitRegister} />
             </div>
           </Col>
         </Row>

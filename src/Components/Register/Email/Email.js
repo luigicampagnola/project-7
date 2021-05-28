@@ -1,13 +1,13 @@
 import React from "react";
 import { Form } from "react-bootstrap";
 
-const Email = () => {
+const Email = ({ onEmailChange }) => {
   return (
     <div>
       <Form>
         <Form.Group>
           <Form.Label>Email</Form.Label>
-          <Form.Control type="email"></Form.Control>
+          <Form.Control onChange={onEmailChange} type="email"></Form.Control>
         </Form.Group>
       </Form>
     </div>

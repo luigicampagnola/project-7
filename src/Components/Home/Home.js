@@ -138,9 +138,9 @@ class Home extends Component {
                   />
                 </Col>
                 <Col sm={4}>
-                 <Timer />
-                 
-{/*                   <div className="mt-2 bg p-2">
+                  <Timer />
+
+                  {/*                   <div className="mt-2 bg p-2">
                     <div className="timer mr-4">
                       You will be logged out in{" "}
                       <Countdown date={Date.now() + 5000} renderer={renderer} />

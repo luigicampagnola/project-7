@@ -11,10 +11,45 @@ class App extends Component {
     this.state = {
       route: "signin",
       isSignedIn: false,
+      user: {
+        id: "",
+        name: "",
+        email: "",
+        joined: new Date(),
+        transactions: {
+          movements: [
+            {
+              id: 0,
+              Type: "",
+              Date: "",
+              Amount: 0,
+            },
+          ],
+        },
+      },
     };
   }
 
-
+  loadUser = (data) => {
+    this.setState({
+      user: {
+        id: data.id,
+        name: data.name,
+        email: data.email,
+        joined: new Date(),
+        transactions: {
+          movements: [
+            {
+              id: data.transactions.movements.id,
+              Type: data.transactions.movements.Type,
+              Date: data.transactions.movements.Date,
+              Amount: data.transactions.movements.Amount,
+            },
+          ],
+        },
+      },
+    });
+  };
 
   //routing
   onRouteChange = (route) => {
@@ -37,7 +72,10 @@ class App extends Component {
         ) : this.state.route === "signin" ? (
           <SignIn onRouteChange={this.onRouteChange} />
         ) : (
-          <Register onRouteChange={this.onRouteChange} />
+          <Register
+            loadUser={this.loadUser}
+            onRouteChange={this.onRouteChange}
+          />
         )}
       </div>
     );
