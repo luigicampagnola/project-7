@@ -68,7 +68,7 @@ class App extends Component {
           isSignedIn={this.state.isSignedIn}
         />
         {this.state.route === "home" ? (
-          <Home />
+          <Home transactions={this.state.user.transactions}/>
         ) : this.state.route === "signin" ? (
           <SignIn loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
         ) : (

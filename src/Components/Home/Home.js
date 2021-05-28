@@ -15,8 +15,8 @@ import { Money } from "../Money/Money";
 import In from "../In/In";
 
 class Home extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       Money: Money,
       CurrentBalance: 0,
@@ -69,6 +69,13 @@ class Home extends Component {
     });
     this.setState({
       addedIn: [...this.state.addedIn, this.state.DepositsAmount],
+    });
+    fetch("http://localhost:3000/transactions", {
+      method: "put",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        id: this.props.transactions,
+      }),
     });
   };
 
