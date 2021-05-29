@@ -1,10 +1,10 @@
 import Button from 'react-bootstrap/Button';
 import React from "react";
 
-const TestButtom = ({ testButtonHandler }) => {
+const TestButtom = ({ testClickHandler }) => {
   return (
     <div>
-      <Button onClick={testButtonHandler}>Test</Button>
+      <Button onClick={testClickHandler}>Test</Button>
     </div>
   );
 };

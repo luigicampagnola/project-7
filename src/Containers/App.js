@@ -136,6 +136,9 @@ class App extends Component {
   deleteInputHandler = (event) => {
     console.log(event.target.value);
   };
+  testClickHandler = () => {
+    console.log(this.state.user);
+  };
   render() {
     return (
       <div>
@@ -155,6 +158,7 @@ class App extends Component {
             depositInputHandler={this.depositInputHandler}
             addedOut={this.state.addedOut}
             addedIn={this.state.addedIn}
+            testClickHandler={this.testClickHandler}
           />
         ) : this.state.route === "signin" ? (
           <SignIn loadUser={this.loadUser} onRouteChange={this.onRouteChange} />

@@ -12,6 +12,7 @@ import CurrentTime from "../CurrentTime/CurrentTime";
 /* import TestButton from "../TestButton/TestButton";
  */ import Timer from "../Timer/Timer";
 import In from "../In/In";
+import TestButton from "../TestButton/TestButton";
 
 const Home = ({
   Money,
@@ -23,6 +24,8 @@ const Home = ({
   depositInputHandler,
   addedIn,
   addedOut,
+  testClickHandler,
+
 }) => {
   return (
     <div>
@@ -74,8 +77,7 @@ const Home = ({
                     </div> */}
               </Col>
             </Row>
-            {/*               <TestButton testButtonHandler={this.testButtonHandler} />
-             */}{" "}
+            <TestButton testClickHandler={testClickHandler} />
           </Container>
         </div>
       </div>
