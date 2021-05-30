@@ -6,7 +6,7 @@ const Name = ({ onNameChange }) => {
     <div>
       <Form>
         <Form.Group>
-          <Form.Label>Name</Form.Label>
+          <Form.Label>Full Name</Form.Label>
           <Form.Control onChange={onNameChange} type="Name"></Form.Control>
         </Form.Group>
       </Form>

@@ -4,13 +4,11 @@ import "./App.css";
 import Home from "../Components/Home/Home";
 import Register from "../Components/Register/Register";
 import SignIn from "../Components/SignIn/SignIn";
-import { Money } from "../Components/Money/Money";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      Money: Money,
       CurrentBalance: 0,
       WithdrawalsAmount: 0,
       DepositsAmount: [],
@@ -110,19 +108,6 @@ class App extends Component {
     }).then((response) => response.json());
   };
 
-  /*       Money: [
-        ...this.state.Money,
-        {
-          Type: "Withdraw",
-          Date: this.timeHandler(),
-          Amount: 0 - this.state.WithdrawalsAmount,
-        },
-      ],
-    });
-    this.setState({
-      addedOut: [...this.state.addedOut, this.state.WithdrawalsAmount],
-    }); */
-
   depositClickHandler = () => {
     this.setState(
       Object.assign(this.state.user.transactions, {
@@ -153,37 +138,6 @@ class App extends Component {
       console.log(response);
     });
   };
-
-  /*     this.setState({
-      Money: [
-        ...this.state.Money,
-        {
-          Type: "Deposit",
-          Date: this.timeHandler(),
-          Amount: this.state.DepositsAmount,
-        },
-      ],
-    });
-    this.setState({
-      addedIn: [...this.state.addedIn, this.state.DepositsAmount],
-    }); */
-  /*     fetch("http://localhost:3000/transactions", {
-      method: "put",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        id: this.state.user.id,
-        movement: this.state.user.transactions.movements,
-      }),
-    })
-      .then((response) => response.json())
-      .then((newMovement) => {
-        this.setState(
-          Object.assign(this.state.user.transactions, {
-            movements: newMovement,
-          })
-        );
-        console.log(newMovement);
-      }); */
 
   //INPUT HANDLERS
 
