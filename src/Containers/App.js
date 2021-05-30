@@ -30,6 +30,7 @@ class App extends Component {
               Type: "",
               Date: "",
               Amount: 0,
+              DepositsAmount: [],
             },
           ],
         },
@@ -47,10 +48,10 @@ class App extends Component {
         transactions: {
           movements: [
             {
-              id: data.transactions.movements.id,
-              Type: data.transactions.movements.Type,
-              Date: data.transactions.movements.Date,
-              Amount: data.transactions.movements.Amount,
+              id: data.transactions.movements[0].id,
+              Type: data.transactions.movements[0].Type,
+              Date: data.transactions.movements[0].Date,
+              Amount: data.transactions.movements[0].Amount,
             },
           ],
         },
@@ -82,8 +83,21 @@ class App extends Component {
   //CLICK HANDLERS
 
   withdrawalClickHandler = () => {
-    this.setState({
-      Money: [
+    this.setState(
+      Object.assign(this.state.user.transactions, {
+        movements: [
+          {
+            id: 0,
+            Type: "",
+            Date: "",
+            Amount: 0,
+          },
+        ],
+      })
+    );
+  };
+
+  /*       Money: [
         ...this.state.Money,
         {
           Type: "Withdraw",
@@ -94,11 +108,24 @@ class App extends Component {
     });
     this.setState({
       addedOut: [...this.state.addedOut, this.state.WithdrawalsAmount],
-    });
-  };
+    }); */
 
   depositClickHandler = () => {
-    this.setState({
+    this.setState(
+      Object.assign(this.state.user.transactions, {
+        movements: [
+          ...this.state.user.transactions.movements,
+          {
+            id: 1,
+            Type: this.state.user.transactions.movements[0].Type,
+            Date: this.state.user.transactions.movements[0].Date,
+            Amount: this.state.user.transactions.movements[0].Amount,
+          },
+        ],
+      })
+    );
+  };
+/*     this.setState({
       Money: [
         ...this.state.Money,
         {
@@ -110,15 +137,25 @@ class App extends Component {
     });
     this.setState({
       addedIn: [...this.state.addedIn, this.state.DepositsAmount],
-    });
+    }); */
     /*     fetch("http://localhost:3000/transactions", {
       method: "put",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        id: this.props.id,
+        id: this.state.user.id,
+        movement: this.state.user.transactions.movements,
       }),
-    }) */
-  };
+    })
+      .then((response) => response.json())
+      .then((newMovement) => {
+        this.setState(
+          Object.assign(this.state.user.transactions, {
+            movements: newMovement,
+          })
+        );
+        console.log(newMovement);
+      }); */
+  
 
   //INPUT HANDLERS
 
@@ -137,7 +174,7 @@ class App extends Component {
     console.log(event.target.value);
   };
   testClickHandler = () => {
-    console.log(this.state.user);
+    console.log(this.state.user.transactions.movements);
   };
   render() {
     return (
@@ -148,7 +185,7 @@ class App extends Component {
         />
         {this.state.route === "home" ? (
           <Home
-            Money={this.state.Money}
+            Money={this.state.user.transactions.movements}
             transactions={this.state.user.transactions}
             deleteInputHandler={this.deleteInputHandler}
             deleteClickHandler={this.deleteClickHandler}
