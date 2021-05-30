@@ -164,6 +164,7 @@ class App extends Component {
         <NavbarComponent
           onRouteChange={this.onRouteChange}
           isSignedIn={this.state.isSignedIn}
+          name={this.state.user.name}
         />
         {this.state.route === "home" ? (
           <Home

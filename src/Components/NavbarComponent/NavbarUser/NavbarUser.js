@@ -2,12 +2,12 @@ import React from "react";
 import { Navbar, NavDropdown } from "react-bootstrap";
 import { DoorOpenFill, GearFill, MoonFill } from "react-bootstrap-icons";
 
-const NavbarUser = ({ onRouteChange, isSignedIn }) => {
+const NavbarUser = ({ onRouteChange, isSignedIn, name }) => {
   if (isSignedIn) {
     return (
       <div className="NavbarUser d-flex nav-user-p">
         <Navbar.Text>
-          Signed in as: <a href="#login">Mark Otto</a>
+          Signed in as: <a href="#login">{name}</a>
         </Navbar.Text>
         <NavDropdown alignRight>
           <div>

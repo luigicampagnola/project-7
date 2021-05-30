@@ -9,8 +9,6 @@ import Close from "../Close/Close";
 import CurrentBalance from "../CurrentBalance/CurrentBalance";
 import TableComponent from "../Table/TableComponent";
 import CurrentTime from "../CurrentTime/CurrentTime";
-/* import TestButton from "../TestButton/TestButton";
- */ import Timer from "../Timer/Timer";
 import In from "../In/In";
 import TestButton from "../TestButton/TestButton";
 
@@ -25,7 +23,6 @@ const Home = ({
   addedIn,
   addedOut,
   testClickHandler,
-
 }) => {
   return (
     <div>
@@ -67,8 +64,8 @@ const Home = ({
                 <In className="mt-2" addedIn={addedIn} addedOut={addedOut} />
               </Col>
               <Col sm={4}>
-                <Timer />
-
+                {/*                 <Timer />
+                 */}
                 {/*                   <div className="mt-2 bg p-2">
                     <div className="timer mr-4">
                       You will be logged out in{" "}

@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import TitleNav from "./TitleNav/TitleNav";
 import NavbarUser from "./NavbarUser/NavbarUser";
 
-const NavbarComponent = ({ onRouteChange, isSignedIn }) => {
+const NavbarComponent = ({ onRouteChange, isSignedIn, name }) => {
   return (
     <div>
       <Navbar bg="dark" variant="dark">
@@ -13,7 +13,11 @@ const NavbarComponent = ({ onRouteChange, isSignedIn }) => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse className="justify-content-end">
           <Nav>
-            <NavbarUser onRouteChange={onRouteChange} isSignedIn={isSignedIn}/>
+            <NavbarUser
+              onRouteChange={onRouteChange}
+              isSignedIn={isSignedIn}
+              name={name}
+            />
           </Nav>
         </Navbar.Collapse>
       </Navbar>
