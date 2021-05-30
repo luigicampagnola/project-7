@@ -26,7 +26,7 @@ class App extends Component {
         transactions: {
           movements: [
             {
-              id: 0,
+              id: 2,
               Type: "",
               Date: "",
               Amount: 0,
@@ -116,16 +116,29 @@ class App extends Component {
         movements: [
           ...this.state.user.transactions.movements,
           {
-            id: 1,
-            Type: this.state.user.transactions.movements[0].Type,
-            Date: this.state.user.transactions.movements[0].Date,
-            Amount: this.state.user.transactions.movements[0].Amount,
+            id: 100,
+            Type: "Deposit",
+            Date: this.timeHandler(),
+            Amount: this.state.DepositsAmount,
           },
         ],
       })
     );
+
+    fetch("http://localhost:3000/transactions", {
+      method: "put",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        id: this.state.user.id,
+        movements: this.state.user.transactions.movements,
+      }),
+    }).then((response) => {
+      response.json();
+      console.log(response);
+    });
   };
-/*     this.setState({
+
+  /*     this.setState({
       Money: [
         ...this.state.Money,
         {
@@ -138,7 +151,7 @@ class App extends Component {
     this.setState({
       addedIn: [...this.state.addedIn, this.state.DepositsAmount],
     }); */
-    /*     fetch("http://localhost:3000/transactions", {
+  /*     fetch("http://localhost:3000/transactions", {
       method: "put",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -155,7 +168,6 @@ class App extends Component {
         );
         console.log(newMovement);
       }); */
-  
 
   //INPUT HANDLERS
 

@@ -8,9 +8,9 @@ const TableComponent = ({ Money }) => {
     let colorClass = "p-1 ";
     if (movement.Type === "Deposit") {
       colorClass += "depo";
-    } else {
+    } else if (movement.Type === "Withdrawal") {
       colorClass += "wit";
-    }
+    } 
     return colorClass;
   };
 
