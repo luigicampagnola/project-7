@@ -86,15 +86,28 @@ class App extends Component {
     this.setState(
       Object.assign(this.state.user.transactions, {
         movements: [
+          ...this.state.user.transactions.movements,
           {
-            id: 0,
-            Type: "",
-            Date: "",
-            Amount: 0,
+            id: 54,
+            Type: "Withdrawal",
+            Date: this.timeHandler(),
+            Amount: 0 - this.state.WithdrawalsAmount,
           },
         ],
       })
     );
+    this.setState({
+      addedOut: [...this.state.addedOut, this.state.WithdrawalsAmount],
+    });
+
+    fetch("http://localhost:3000/transactions", {
+      method: "put",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        id: this.state.user.id,
+        movements: this.state.user.transactions.movements,
+      }),
+    }).then((response) => response.json());
   };
 
   /*       Money: [
@@ -124,6 +137,9 @@ class App extends Component {
         ],
       })
     );
+    this.setState({
+      addedIn: [...this.state.addedIn, this.state.DepositsAmount],
+    });
 
     fetch("http://localhost:3000/transactions", {
       method: "put",
