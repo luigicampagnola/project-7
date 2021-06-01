@@ -16,7 +16,7 @@ class SignIn extends Component {
     };
   }
 
-  onEmailChange = (event) => {
+  onEmailChange = (event) => {  
     this.setState({ signInEmail: event.target.value });
   };
 
@@ -36,10 +36,14 @@ class SignIn extends Component {
       .then((response) => response.json())
       .then((user) => {
         if (user.id) {
-          this.props.loadUser(user);
+          console.log(user)
+          console.log(user.id)
+          console.log(user.movements)
+/*           this.props.loadTransactions(transactions);
+ */          this.props.loadUser(user);
           this.props.onRouteChange("home");
         }
-      });
+      }).catch(err => console.log('error'))
   };
 
   render() {
