@@ -30,14 +30,6 @@ class App extends Component {
           },
         ],
       },
-      movementsTable: [
-        {
-          id: 2,
-          Type: "",
-          Date: "",
-          Amount: 0,
-        },
-      ],
     };
   }
 
@@ -60,10 +52,20 @@ class App extends Component {
     });
   };
 
-    loadTransactions = (data) =>{
-
+  loadTransactions = () => {
+    if (this.state.isSignedIn) {
+      fetch("http://localhost:3000/loadedTransactions", {
+        method: "put",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          id: this.state.id,
+        }),
+      }).then((response) => {
+        response.json();
+        console.log(response);
+      });
     }
-
+  };
   //routing
   onRouteChange = (route) => {
     if (route === "signout") {
@@ -88,17 +90,19 @@ class App extends Component {
   //CLICK HANDLERS
 
   withdrawalClickHandler = () => {
-    this.setState({
-      movements: [
-        ...this.state.movementsTable,
-        {
-          id: 54,
-          Type: "Withdrawal",
-          Date: this.timeHandler(),
-          Amount: 0 - this.state.WithdrawalsAmount,
-        },
-      ],
-    });
+    this.setState(
+      Object.assign(this.state.user, {
+        movements: [
+          ...this.state.user.movements,
+          {
+            id: 54,
+            Type: "Withdrawal",
+            Date: this.timeHandler(),
+            Amount: 0 - this.state.WithdrawalsAmount,
+          },
+        ],
+      })
+    );
     this.setState({
       addedOut: [...this.state.addedOut, this.state.WithdrawalsAmount],
     });
@@ -108,23 +112,25 @@ class App extends Component {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         id: this.state.user.id,
-        movements: this.state.movementsTable,
+        movements: this.state.user.movements,
       }),
     }).then((response) => response.json());
   };
 
   depositClickHandler = () => {
-    this.setState({
-      movements: [
-        ...this.state.movementsTable,
-        {
-          id: 100,
-          Type: "Deposit",
-          Date: this.timeHandler(),
-          Amount: this.state.DepositsAmount,
-        },
-      ],
-    });
+    this.setState(
+      Object.assign(this.state.user, {
+        movements: [
+          ...this.state.user.movements,
+          {
+            id: 100,
+            Type: "Deposit",
+            Date: this.timeHandler(),
+            Amount: this.state.DepositsAmount,
+          },
+        ],
+      })
+    );
     this.setState({
       addedIn: [...this.state.addedIn, this.state.DepositsAmount],
     });
@@ -134,7 +140,7 @@ class App extends Component {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         id: this.state.user.id,
-        movements: this.state.movementsTable,
+        movements: this.state.user.movements,
       }),
     }).then((response) => {
       response.json();
@@ -171,8 +177,8 @@ class App extends Component {
         />
         {this.state.route === "home" ? (
           <Home
-            Money={this.state.movementsTable}
-            transactions={this.state.movementsTable}
+            Money={this.state.user.movements}
+            transactions={this.state.user.movements}
             deleteInputHandler={this.deleteInputHandler}
             deleteClickHandler={this.deleteClickHandler}
             withdrawalClickHandler={this.withdrawalClickHandler}
@@ -184,7 +190,7 @@ class App extends Component {
             testClickHandler={this.testClickHandler}
           />
         ) : this.state.route === "signin" ? (
-          <SignIn loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
+          <SignIn loadUser={this.loadUser} onRouteChange={this.onRouteChange} loadTransactions={this.loadTransactions} />
         ) : (
           <Register
             loadUser={this.loadUser}
