@@ -21,17 +21,14 @@ class App extends Component {
         name: "",
         email: "",
         joined: new Date(),
-        transactions: {
-          movements: [
-            {
-              id: 2,
-              Type: "",
-              Date: "",
-              Amount: 0,
-              DepositsAmount: [],
-            },
-          ],
-        },
+        movements: [
+          {
+            id: 2,
+            Type: "",
+            Date: "",
+            Amount: 0,
+          },
+        ],
       },
     };
   }
@@ -43,16 +40,14 @@ class App extends Component {
         name: data.name,
         email: data.email,
         joined: new Date(),
-        transactions: {
-          movements: [
-            {
-              id: data.transactions.movements[0].id,
-              Type: data.transactions.movements[0].Type,
-              Date: data.transactions.movements[0].Date,
-              Amount: data.transactions.movements[0].Amount,
-            },
-          ],
-        },
+        movements: [
+          {
+            id: data.movements[0].id,
+            Type: data.movements[0].Type,
+            Date: data.movements[0].Date,
+            Amount: data.movements[0].Amount,
+          },
+        ],
       },
     });
   };
@@ -82,9 +77,9 @@ class App extends Component {
 
   withdrawalClickHandler = () => {
     this.setState(
-      Object.assign(this.state.user.transactions, {
+      Object.assign(this.state.user, {
         movements: [
-          ...this.state.user.transactions.movements,
+          ...this.state.user.movements,
           {
             id: 54,
             Type: "Withdrawal",
@@ -103,16 +98,16 @@ class App extends Component {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         id: this.state.user.id,
-        movements: this.state.user.transactions.movements,
+        movements: this.state.user.movements,
       }),
     }).then((response) => response.json());
   };
 
   depositClickHandler = () => {
     this.setState(
-      Object.assign(this.state.user.transactions, {
+      Object.assign(this.state.user, {
         movements: [
-          ...this.state.user.transactions.movements,
+          ...this.state.user.movements,
           {
             id: 100,
             Type: "Deposit",
@@ -131,7 +126,7 @@ class App extends Component {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         id: this.state.user.id,
-        movements: this.state.user.transactions.movements,
+        movements: this.state.user.movements,
       }),
     }).then((response) => {
       response.json();
@@ -156,7 +151,7 @@ class App extends Component {
     console.log(event.target.value);
   };
   testClickHandler = () => {
-    console.log(this.state.user.transactions.movements);
+    console.log(this.state.user.movements);
   };
   render() {
     return (
@@ -168,8 +163,8 @@ class App extends Component {
         />
         {this.state.route === "home" ? (
           <Home
-            Money={this.state.user.transactions.movements}
-            transactions={this.state.user.transactions}
+            Money={this.state.user.movements}
+            transactions={this.state.user.movements}
             deleteInputHandler={this.deleteInputHandler}
             deleteClickHandler={this.deleteClickHandler}
             withdrawalClickHandler={this.withdrawalClickHandler}
