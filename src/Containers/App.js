@@ -77,12 +77,8 @@ class App extends Component {
               ],
             })
           );
-          if (data[i].Type === "Deposit") {
-            console.log(data[i].Amount);
-          } else if (data[i].Type === "Withdrawal") {
-            console.log(data[i].Amount);
-          }
-        });
+/*             setAmounts(data);
+ */        });
       })
       .catch((err) => console.log("error catching movements"));
   };
