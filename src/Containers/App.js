@@ -53,18 +53,30 @@ class App extends Component {
   };
 
   loadTransactions = () => {
-    if (this.state.isSignedIn) {
-      fetch("http://localhost:3000/loadedTransactions", {
-        method: "put",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          id: this.state.id,
-        }),
-      }).then((response) => {
-        response.json();
-        console.log(response);
-      });
-    }
+    console.log("hi, loading transactions..");
+    fetch("http://localhost:3000/loadedTransactions", {
+      method: "put",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        id: this.state.user.id,
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        this.setState(
+          Object.assign(this.state.user, {
+            movements: [
+              {
+                id: data[0].id,
+                Type: data[0].Type,
+                Date: data[0].Date,
+                Amount: data[0].Amount,
+              },
+            ],
+          })
+        );
+      })
+      .catch((err) => console.log("error"));
   };
   //routing
   onRouteChange = (route) => {
@@ -165,7 +177,7 @@ class App extends Component {
     console.log(event.target.value);
   };
   testClickHandler = () => {
-    console.log(this.state.user.movements);
+    console.log("click");
   };
   render() {
     return (
@@ -190,7 +202,11 @@ class App extends Component {
             testClickHandler={this.testClickHandler}
           />
         ) : this.state.route === "signin" ? (
-          <SignIn loadUser={this.loadUser} onRouteChange={this.onRouteChange} loadTransactions={this.loadTransactions} />
+          <SignIn
+            loadUser={this.loadUser}
+            onRouteChange={this.onRouteChange}
+            loadTransactions={this.loadTransactions}
+          />
         ) : (
           <Register
             loadUser={this.loadUser}

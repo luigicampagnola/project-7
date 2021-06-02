@@ -37,8 +37,8 @@ class SignIn extends Component {
       .then((user) => {
         if (user.id) {
           this.props.loadUser(user);
-          this.props.loadTransactions();
           this.props.onRouteChange("home");
+          this.props.loadTransactions();
         }
       });
   };
