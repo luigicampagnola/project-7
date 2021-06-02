@@ -63,20 +63,28 @@ class App extends Component {
     })
       .then((response) => response.json())
       .then((data) => {
-        this.setState(
-          Object.assign(this.state.user, {
-            movements: [
-              {
-                id: data[0].id,
-                Type: data[0].Type,
-                Date: data[0].Date,
-                Amount: data[0].Amount,
-              },
-            ],
-          })
-        );
+        data.forEach((move, i) => {
+          this.setState(
+            Object.assign(this.state.user, {
+              movements: [
+                ...this.state.user.movements,
+                {
+                  id: data[i].id,
+                  Type: data[i].Type,
+                  Date: data[i].Date,
+                  Amount: data[i].Amount,
+                },
+              ],
+            })
+          );
+          if (data[i].Type === "Deposit") {
+            console.log(data[i].Amount);
+          } else if (data[i].Type === "Withdrawal") {
+            console.log(data[i].Amount);
+          }
+        });
       })
-      .catch((err) => console.log("error"));
+      .catch((err) => console.log("error catching movements"));
   };
   //routing
   onRouteChange = (route) => {
