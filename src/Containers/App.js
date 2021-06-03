@@ -9,8 +9,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      CurrentBalance: 0,
-      WithdrawalsAmount: 0,
+      WithdrawalsAmount: [],
       DepositsAmount: [],
       addedIn: [0],
       addedOut: [0],
@@ -22,6 +21,14 @@ class App extends Component {
         email: "",
         joined: new Date(),
         movements: [
+          {
+            id: 2,
+            Type: "",
+            Date: "",
+            Amount: 0,
+          },
+        ],
+        movementsTable: [
           {
             id: 2,
             Type: "",
@@ -208,8 +215,7 @@ class App extends Component {
         />
         {this.state.route === "home" ? (
           <Home
-            Money={this.state.user.movements}
-            transactions={this.state.user.movements}
+            movementsT={this.state.user.movements}
             deleteInputHandler={this.deleteInputHandler}
             deleteClickHandler={this.deleteClickHandler}
             withdrawalClickHandler={this.withdrawalClickHandler}

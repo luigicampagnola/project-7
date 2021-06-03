@@ -3,27 +3,27 @@ import Table from "react-bootstrap/Table";
 import Scroll from "../Scroll/Scroll";
 import "./TableComponent.css";
 
-const TableComponent = ({ Money }) => {
+const TableComponent = ({ movementsT }) => {
   const colorType = (movement) => {
     let colorClass = "p-1 ";
     if (movement.Type === "Deposit") {
       colorClass += "depo";
     } else if (movement.Type === "Withdrawal") {
       colorClass += "wit";
-    } 
+    }
     return colorClass;
   };
 
-  const renderMovements = (Money, i) => {
+  const renderMovements = (movementsT, i) => {
     return (
       <tr key={i}>
-        <td className="p-3" >
-          <div className={colorType(Money)}>{Money.Type}</div>
+        <td className="p-3">
+          <div className={colorType(movementsT)}>{movementsT.Type}</div>
         </td>
         <td className="p-3 App" colSpan="2">
-          {Money.Date}
+          {movementsT.Date}
         </td>
-        <td className="p-3 App">{Money.Amount}</td>
+        <td className="p-3 App">{movementsT.Amount}</td>
       </tr>
     );
   };
@@ -41,7 +41,7 @@ const TableComponent = ({ Money }) => {
               <th className="p-2 App sticky">Amount</th>
             </tr>
           </thead>
-          <tbody>{Money.map(renderMovements)}</tbody>
+          <tbody>{movementsT.map(renderMovements)}</tbody>
         </Table>
       </Scroll>
     </div>

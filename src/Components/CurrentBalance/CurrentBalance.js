@@ -4,8 +4,9 @@ import { Row } from "react-bootstrap";
 import { CurrencyDollar } from "react-bootstrap-icons";
 
 
-const CurrentBalance = ({ CurrentBalance }) => {
-  const arrayAmount = CurrentBalance.map((obj) => {
+const CurrentBalance = ({ movementsT }) => {
+  
+  const arrayAmount = movementsT.map((obj) => {
     return obj.Amount;
   });
 
