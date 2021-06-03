@@ -15,27 +15,19 @@ class App extends Component {
       addedOut: [0],
       route: "signin",
       isSignedIn: false,
+      movementsTable: [
+        {
+          id: 2,
+          Type: "",
+          Date: "",
+          Amount: 0,
+        },
+      ],
       user: {
         id: "",
         name: "",
         email: "",
         joined: new Date(),
-        movements: [
-          {
-            id: 2,
-            Type: "",
-            Date: "",
-            Amount: 0,
-          },
-        ],
-        movementsTable: [
-          {
-            id: 2,
-            Type: "",
-            Date: "",
-            Amount: 0,
-          },
-        ],
       },
     };
   }
@@ -47,14 +39,6 @@ class App extends Component {
         name: data.name,
         email: data.email,
         joined: new Date(),
-        movements: [
-          {
-            id: data.movements[0].id,
-            Type: data.movements[0].Type,
-            Date: data.movements[0].Date,
-            Amount: data.movements[0].Amount,
-          },
-        ],
       },
     });
   };
@@ -71,19 +55,17 @@ class App extends Component {
       .then((response) => response.json())
       .then((data) => {
         data.forEach((move, i) => {
-          this.setState(
-            Object.assign(this.state.user, {
-              movements: [
-                ...this.state.user.movements,
-                {
-                  id: data[i].id,
-                  Type: data[i].Type,
-                  Date: data[i].Date,
-                  Amount: data[i].Amount,
-                },
-              ],
-            })
-          );
+          this.setState({
+            movementsTable: [
+              ...this.state.movementsTable,
+              {
+                id: data[i].id,
+                Type: data[i].Type,
+                Date: data[i].Date,
+                Amount: data[i].Amount,
+              },
+            ],
+          });
           if (data[i].Type === "Deposit") {
             this.setDepoAmount(data[i].Amount);
           } else {
@@ -128,19 +110,17 @@ class App extends Component {
   //CLICK HANDLERS
 
   withdrawalClickHandler = () => {
-    this.setState(
-      Object.assign(this.state.user, {
-        movements: [
-          ...this.state.user.movements,
-          {
-            id: 54,
-            Type: "Withdrawal",
-            Date: this.timeHandler(),
-            Amount: 0 - this.state.WithdrawalsAmount,
-          },
-        ],
-      })
-    );
+    this.setState({
+      movementsTable: [
+        ...this.state.movementsTable,
+        {
+          id: 54,
+          Type: "Withdrawal",
+          Date: this.timeHandler(),
+          Amount: 0 - this.state.WithdrawalsAmount,
+        },
+      ],
+    });
     this.setState({
       addedOut: [...this.state.addedOut, this.state.WithdrawalsAmount],
     });
@@ -150,25 +130,23 @@ class App extends Component {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         id: this.state.user.id,
-        movements: this.state.user.movements,
+        movements: this.state.movementsTable,
       }),
     }).then((response) => response.json());
   };
 
   depositClickHandler = () => {
-    this.setState(
-      Object.assign(this.state.user, {
-        movements: [
-          ...this.state.user.movements,
-          {
-            id: 100,
-            Type: "Deposit",
-            Date: this.timeHandler(),
-            Amount: this.state.DepositsAmount,
-          },
-        ],
-      })
-    );
+    this.setState({
+      movementsTable: [
+        ...this.state.movementsTable,
+        {
+          id: 100,
+          Type: "Deposit",
+          Date: this.timeHandler(),
+          Amount: this.state.DepositsAmount,
+        },
+      ],
+    });
     this.setState({
       addedIn: [...this.state.addedIn, this.state.DepositsAmount],
     });
@@ -178,11 +156,10 @@ class App extends Component {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         id: this.state.user.id,
-        movements: this.state.user.movements,
+        movements: this.state.movementsTable,
       }),
     }).then((response) => {
       response.json();
-      console.log(response);
     });
   };
 
@@ -215,7 +192,7 @@ class App extends Component {
         />
         {this.state.route === "home" ? (
           <Home
-            movementsTable={this.state.user.movements}
+            movementsTable={this.state.movementsTable}
             deleteInputHandler={this.deleteInputHandler}
             deleteClickHandler={this.deleteClickHandler}
             withdrawalClickHandler={this.withdrawalClickHandler}
