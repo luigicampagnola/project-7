@@ -77,11 +77,26 @@ class App extends Component {
               ],
             })
           );
-/*             setAmounts(data);
- */        });
+          if (data[i].Type === "Deposit") {
+            this.setDepoAmount(data[i].Amount);
+          } else {
+            this.setWithAmount(data[i].Amount);
+          }
+        });
       })
       .catch((err) => console.log("error catching movements"));
   };
+
+  setDepoAmount = (data) => {
+    this.setState({ addedIn: [...this.state.addedIn, data] });
+    console.log(this.state.addedIn);
+  };
+
+  setWithAmount = (data) => {
+    this.setState({ addedOut: [...this.state.addedOut, data] });
+    console.log(this.state.addedOut);
+  };
+
   //routing
   onRouteChange = (route) => {
     if (route === "signout") {
