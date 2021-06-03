@@ -13,7 +13,7 @@ import In from "../In/In";
 import TestButton from "../TestButton/TestButton";
 
 const Home = ({
-  movementsT,
+  movementsTable,
   deleteInputHandler,
   deleteClickHandler,
   withdrawalClickHandler,
@@ -29,11 +29,11 @@ const Home = ({
       <div className="mb-5">
         <div className="mt-5">
           <Container>
-            <CurrentBalance movementsT={movementsT} />
+            <CurrentBalance movementsTable={movementsTable} />
             <CurrentTime className="mb-1" />
             <Row>
               <Col sm={7}>
-                <TableComponent movementsT={movementsT} />
+                <TableComponent movementsTable={movementsTable} />
               </Col>
               <Col sm={5}>
                 <div className="transaction-color">

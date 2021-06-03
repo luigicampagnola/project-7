@@ -215,7 +215,7 @@ class App extends Component {
         />
         {this.state.route === "home" ? (
           <Home
-            movementsT={this.state.user.movements}
+            movementsTable={this.state.user.movements}
             deleteInputHandler={this.deleteInputHandler}
             deleteClickHandler={this.deleteClickHandler}
             withdrawalClickHandler={this.withdrawalClickHandler}
