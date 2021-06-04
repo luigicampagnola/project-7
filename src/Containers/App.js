@@ -49,7 +49,7 @@ class App extends Component {
       method: "put",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        id: this.state.user.id,
+        email: this.state.user.email,
       }),
     })
       .then((response) => response.json())
@@ -155,7 +155,7 @@ class App extends Component {
       method: "put",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        id: this.state.user.id,
+        email: this.state.user.email,
         movements: this.state.movementsTable,
       }),
     }).then((response) => {
