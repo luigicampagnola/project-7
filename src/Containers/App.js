@@ -18,9 +18,9 @@ class App extends Component {
       movementsTable: [
         {
           id: 2,
-          Type: "",
-          Date: "",
-          Amount: 0,
+          type: "",
+          date: "",
+          amount: 0,
         },
       ],
       user: {
@@ -52,7 +52,10 @@ class App extends Component {
         email: this.state.user.email,
       }),
     })
-      .then((response) => response.json())
+      .then((response) => {
+        response.json();
+        console.log(response);
+      })
       .then((data) => {
         data.forEach((move, i) => {
           this.setState({
@@ -60,16 +63,16 @@ class App extends Component {
               ...this.state.movementsTable,
               {
                 id: data[i].id,
-                Type: data[i].Type,
-                Date: data[i].Date,
-                Amount: data[i].Amount,
+                Type: data[i].type,
+                Date: data[i].date,
+                Amount: data[i].amount,
               },
             ],
           });
           if (data[i].Type === "Deposit") {
-            this.setDepoAmount(data[i].Amount);
+            this.setDepoAmount(data[i].amount);
           } else {
-            this.setWithAmount(data[i].Amount);
+            this.setWithAmount(data[i].amount);
           }
         });
       })
@@ -156,7 +159,15 @@ class App extends Component {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         email: this.state.user.email,
-        movements: this.state.movementsTable,
+        type: this.state.movementsTable.map(obj=>{
+          return obj.type;
+        }),
+        date: this.state.movementsTable.map(obj=>{
+          return obj.type;
+        }),
+        amount: this.state.movementsTable.map(obj=>{
+          return obj.amount;
+        })
       }),
     }).then((response) => {
       response.json();
