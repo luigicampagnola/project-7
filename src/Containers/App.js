@@ -133,6 +133,7 @@ class App extends Component {
       method: "put",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
+        email: this.state.user.email,
         id: this.state.user.id,
         type: "Withdrawal",
         date: this.timeHandler(),
@@ -140,13 +141,6 @@ class App extends Component {
       }),
     }).then((response) => response.json());
   };
-
-  /*   depositClickHandler =() =>{
-    fetch("http://localhost:3000/transactions", {
-      method: "put",
-      headers: { "Content-Type": "application/json"}
-    })
-  } */
 
   depositClickHandler = () => {
     this.setState({
@@ -174,14 +168,9 @@ class App extends Component {
         date: this.timeHandler(),
         amount: this.state.DepositsAmount,
       }),
-    })
-      .then((response) => {
-        response.json();
-        console.log(response);
-      })
-      .then((data) => {
-        console.log(data);
-      });
+    }).then((response) => {
+      response.json();
+    });
   };
 
   //INPUT HANDLERS
