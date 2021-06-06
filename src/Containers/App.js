@@ -18,9 +18,9 @@ class App extends Component {
       movementsTable: [
         {
           id: 2,
-          type: "",
+          type: "Deposit",
           date: "",
-          amount: 0,
+          amount: "",
         },
       ],
       user: {
@@ -53,23 +53,24 @@ class App extends Component {
       }),
     })
       .then((response) => {
-        response.json();
         console.log(response);
+        response.json();
       })
       .then((data) => {
+        console.log(data);
         data.forEach((move, i) => {
           this.setState({
             movementsTable: [
               ...this.state.movementsTable,
               {
                 id: data[i].id,
-                Type: data[i].type,
-                Date: data[i].date,
-                Amount: data[i].amount,
+                type: data[i].type,
+                date: data[i].date,
+                amount: data[i].amount,
               },
             ],
           });
-          if (data[i].Type === "Deposit") {
+          if (data[i].type === "Deposit") {
             this.setDepoAmount(data[i].amount);
           } else {
             this.setWithAmount(data[i].amount);
@@ -118,9 +119,9 @@ class App extends Component {
         ...this.state.movementsTable,
         {
           id: 54,
-          Type: "Withdrawal",
-          Date: this.timeHandler(),
-          Amount: 0 - this.state.WithdrawalsAmount,
+          type: "Withdrawal",
+          date: this.timeHandler(),
+          amount: 0 - this.state.WithdrawalsAmount,
         },
       ],
     });
@@ -133,10 +134,19 @@ class App extends Component {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         id: this.state.user.id,
-        movements: this.state.movementsTable,
+        type: "Withdrawal",
+        date: this.timeHandler(),
+        amount: this.state.WithdrawalsAmount,
       }),
     }).then((response) => response.json());
   };
+
+  /*   depositClickHandler =() =>{
+    fetch("http://localhost:3000/transactions", {
+      method: "put",
+      headers: { "Content-Type": "application/json"}
+    })
+  } */
 
   depositClickHandler = () => {
     this.setState({
@@ -144,9 +154,9 @@ class App extends Component {
         ...this.state.movementsTable,
         {
           id: 100,
-          Type: "Deposit",
-          Date: this.timeHandler(),
-          Amount: this.state.DepositsAmount,
+          type: "Deposit",
+          date: this.timeHandler(),
+          amount: this.state.DepositsAmount,
         },
       ],
     });
@@ -159,19 +169,18 @@ class App extends Component {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         email: this.state.user.email,
-        type: this.state.movementsTable.map(obj=>{
-          return obj.type;
-        }),
-        date: this.state.movementsTable.map(obj=>{
-          return obj.type;
-        }),
-        amount: this.state.movementsTable.map(obj=>{
-          return obj.amount;
-        })
+        id: this.state.user.id,
+        type: "Deposit",
+        date: this.timeHandler(),
+        amount: this.state.DepositsAmount,
       }),
-    }).then((response) => {
-      response.json();
-    });
+    })
+      .then((response) => {
+        response.json();
+      })
+      .then((data) => {
+        console.log(data);
+      });
   };
 
   //INPUT HANDLERS
@@ -191,7 +200,7 @@ class App extends Component {
     console.log(event.target.value);
   };
   testClickHandler = () => {
-    console.log("click");
+    console.log(this.state.movementsTable);
   };
   render() {
     return (
