@@ -4,11 +4,11 @@ import Col from "react-bootstrap/Col";
 
 const In = ({ addedIn, addedOut }) => {
   const addedAmount = addedIn.reduce((acc, amount) => {
-    return acc + amount;
+    return Number(acc + amount);
   });
 
   const subAmount = addedOut.reduce((acc, amount) => {
-    return acc + amount;
+    return Number(acc + amount);
   });
 
   const roundedAddedAmount = Math.round(addedAmount * 100) / 100;
