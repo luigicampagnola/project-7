@@ -6,9 +6,9 @@ import "./TableComponent.css";
 const TableComponent = ({ movementsTable }) => {
   const colorType = (movement) => {
     let colorClass = "p-1 ";
-    if (movement.Type === "Deposit") {
+    if (movement.type === "Deposit") {
       colorClass += "depo";
-    } else if (movement.Type === "Withdrawal") {
+    } else if (movement.type === "Withdrawal") {
       colorClass += "wit";
     } 
     return colorClass;
@@ -19,12 +19,12 @@ const TableComponent = ({ movementsTable }) => {
     return (
       <tr key={i}>
         <td className="p-3" >
-          <div className={colorType(movementsTable)}>{movementsTable.Type}</div>
+          <div className={colorType(movementsTable)}>{movementsTable.type}</div>
         </td>
         <td className="p-3 App" colSpan="2">
-          {movementsTable.Date}
+          {movementsTable.date}
         </td>
-        <td className="p-3 App">{movementsTable.Amount}</td>
+        <td className="p-3 App">{movementsTable.amount}</td>
       </tr>
     );
   };

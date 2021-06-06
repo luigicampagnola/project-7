@@ -7,7 +7,7 @@ import { CurrencyDollar } from "react-bootstrap-icons";
 const CurrentBalance = ({ movementsTable }) => {
   
   const arrayAmount = movementsTable.map((obj) => {
-    return obj.Amount;
+    return Number(obj.amount);
   });
 
   const addedAmount = arrayAmount.reduce((acc, amount) => {

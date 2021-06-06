@@ -177,6 +177,7 @@ class App extends Component {
     })
       .then((response) => {
         response.json();
+        console.log(response);
       })
       .then((data) => {
         console.log(data);
