@@ -52,13 +52,11 @@ class App extends Component {
         email: this.state.user.email,
       }),
     })
-      .then((response) => {
-        console.log(response);
-        response.json();
-      })
+      .then((response) => response.json())
       .then((data) => {
         console.log(data);
         data.forEach((move, i) => {
+          console.log(move);
           this.setState({
             movementsTable: [
               ...this.state.movementsTable,
@@ -137,7 +135,7 @@ class App extends Component {
         id: this.state.user.id,
         type: "Withdrawal",
         date: this.timeHandler(),
-        amount: this.state.WithdrawalsAmount,
+        amount: 0 - this.state.WithdrawalsAmount,
       }),
     }).then((response) => response.json());
   };
