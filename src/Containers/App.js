@@ -45,7 +45,6 @@ class App extends Component {
   };
 
   loadTransactions = () => {
-    console.log("hi, loading transactions..");
     fetch("http://localhost:3000/loadedTransactions", {
       method: "put",
       headers: { "Content-Type": "application/json" },
@@ -55,7 +54,6 @@ class App extends Component {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         data.forEach((move, i) => {
           this.setState({
             movementsTable: [
@@ -80,12 +78,10 @@ class App extends Component {
 
   setDepoAmount = (data) => {
     this.setState({ addedIn: [...this.state.addedIn, data] });
-    console.log(this.state.addedIn);
   };
 
   setWithAmount = (data) => {
     this.setState({ addedOut: [...this.state.addedOut, data] });
-    console.log(this.state.addedOut);
   };
 
   //routing
@@ -187,10 +183,10 @@ class App extends Component {
   deleteInputHandler = (event) => {
     console.log(event.target.value);
   };
-  testClickHandler = () => {
+  /*   testClickHandler = () => {
     console.log(this.state.movementsTable);
     console.log(this.state.addedOut);
-  };
+  }; */
 
   render() {
     return (

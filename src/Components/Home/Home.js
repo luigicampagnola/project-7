@@ -10,8 +10,8 @@ import CurrentBalance from "../CurrentBalance/CurrentBalance";
 import TableComponent from "../Table/TableComponent";
 import CurrentTime from "../CurrentTime/CurrentTime";
 import In from "../In/In";
-import TestButton from "../TestButton/TestButton";
-
+/* import TestButton from "../TestButton/TestButton";
+ */
 const Home = ({
   movementsTable,
   deleteInputHandler,
@@ -22,8 +22,8 @@ const Home = ({
   depositInputHandler,
   addedIn,
   addedOut,
-  testClickHandler,
-}) => {
+/*   testClickHandler,
+ */}) => {
   return (
     <div>
       <div className="mb-5">
@@ -74,7 +74,7 @@ const Home = ({
                     </div> */}
               </Col>
             </Row>
-            <TestButton testClickHandler={testClickHandler} />
+{/*             <TestButton testClickHandler={testClickHandler} /> */}
           </Container>
         </div>
       </div>
