@@ -4,9 +4,7 @@ import Scroll from "../Scroll/Scroll";
 import "./TableComponent.css";
 
 const TableComponent = ({ movementsTable }) => {
-  /* need to add conditioning to not render anything if 
-    if amount is = 0
-  */
+
 
   const colorType = (movement) => {
     let colorClass = "p-1 ";

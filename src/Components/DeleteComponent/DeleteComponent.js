@@ -6,7 +6,7 @@ import Form from "react-bootstrap/Form";
 import DeleteButton from "./Button/Button";
 
 
-const Close = ({ deleteClickHandler, deleteInputHandler }) => {
+const DeleteComponent = ({ deleteClickHandler, deleteInputHandler }) => {
   return (
     <Container className="p-3">
       <div className="mb-3 ml-3 component-title">Delete Account</div>
@@ -14,7 +14,7 @@ const Close = ({ deleteClickHandler, deleteInputHandler }) => {
         <Form className='p-2'>
           <Form.Row>
             <Form.Group as={Col} controlId="formGriidEmail2">
-              <Form.Control className="mt-2" size='sm' type="email" placeholder="user" onChange={deleteInputHandler}/>
+              <Form.Control className="mt-2" size='sm' type="email" placeholder="User" onChange={deleteInputHandler}/>
               <div className="App">Confirm User</div>
             </Form.Group>
             <Form.Group as={Col} controlId="formGridPassword2">
@@ -22,10 +22,10 @@ const Close = ({ deleteClickHandler, deleteInputHandler }) => {
                 size='sm'
                 className="mt-2"
                 type="password"
-                placeholder="PIN"
+                placeholder="Password"
                 onChange={deleteInputHandler}
               />
-              <div className="App">Confirm PIN</div>
+              <div className="App">Confirm Password</div>
             </Form.Group>
           </Form.Row>
         </Form>
@@ -37,4 +37,4 @@ const Close = ({ deleteClickHandler, deleteInputHandler }) => {
   );
 };
 
-export default Close;
+export default DeleteComponent;

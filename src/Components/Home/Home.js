@@ -5,7 +5,7 @@ import { Container } from "react-bootstrap";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Deposits from "../Deposits/Deposits";
-import Close from "../Close/Close";
+import DeleteComponent from "../DeleteComponent/DeleteComponent";
 import CurrentBalance from "../CurrentBalance/CurrentBalance";
 import TableComponent from "../Table/TableComponent";
 import CurrentTime from "../CurrentTime/CurrentTime";
@@ -50,7 +50,7 @@ const Home = ({
                   />
                 </div>
                 <div className="mt-2 close-color">
-                  <Close
+                  <DeleteComponent
                     deleteInputHandler={deleteInputHandler}
                     deleteClickHandler={deleteClickHandler}
                   />
@@ -64,14 +64,7 @@ const Home = ({
                 <In className="mt-2" addedIn={addedIn} addedOut={addedOut} />
               </Col>
               <Col sm={4}>
-                {/*                 <Timer />
-                 */}
-                {/*                   <div className="mt-2 bg p-2">
-                    <div className="timer mr-4">
-                      You will be logged out in{" "}
-                      <Countdown date={Date.now() + 5000} renderer={renderer} />
-                  </div>
-                    </div> */}
+
               </Col>
             </Row>
 {/*             <TestButton testClickHandler={testClickHandler} /> */}
