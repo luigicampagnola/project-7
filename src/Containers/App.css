@@ -47,9 +47,11 @@
   height: 580px;
 }
 
-.sticky {
+.sticky{
   position: sticky;
-}
+  top: 0;
+  background: white;
+} 
 
 .Current {
   font-size: 28px;

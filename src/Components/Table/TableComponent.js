@@ -4,8 +4,6 @@ import Scroll from "../Scroll/Scroll";
 import "./TableComponent.css";
 
 const TableComponent = ({ movementsTable }) => {
-
-
   const colorType = (movement) => {
     let colorClass = "p-1 ";
     if (movement.type === "Deposit") {
@@ -41,13 +39,13 @@ const TableComponent = ({ movementsTable }) => {
     <div>
       <Scroll>
         <Table striped bordered hover size="sm">
-          <thead>
+          <thead className="sticky">
             <tr>
-              <th className="p-2 App sticky">Transaction</th>
-              <th className="p-2 App sticky" colSpan="2">
+              <th className="p-2 App ">Transaction</th>
+              <th className="p-2 App " colSpan="2">
                 Date
               </th>
-              <th className="p-2 App sticky">Amount</th>
+              <th className="p-2 App ">Amount</th>
             </tr>
           </thead>
           <tbody>{movementsTable.map(renderMovements)}</tbody>
