@@ -5,6 +5,7 @@ import Home from "../Components/Home/Home";
 import Register from "../Components/Register/Register";
 import SignIn from "../Components/SignIn/SignIn";
 
+
 const initialState = {
   WithdrawalsAmount: [],
   DepositsAmount: [],
@@ -177,12 +178,10 @@ class App extends Component {
     this.setState({ DepositsAmount: Number(event.target.value) });
   };
   deleteClickHandler = () => {
-    console.log("click");
+    alert("Sorry.. feature unavailable at the moment")
   };
 
-  deleteInputHandler = (event) => {
-    console.log(event.target.value);
-  };
+  deleteInputHandler = (event) => {};
   /*   testClickHandler = () => {
     console.log(this.state.movementsTable);
     console.log(this.state.addedOut);
