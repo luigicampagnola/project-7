@@ -1,6 +1,8 @@
 import React from "react";
 import { Navbar, NavDropdown } from "react-bootstrap";
 import { DoorOpenFill, GearFill, MoonFill } from "react-bootstrap-icons";
+import DarkMode from "../Darkmode/Darkmode";
+import "../Darkmode/Darkmode.css";
 
 const NavbarUser = ({ onRouteChange, isSignedIn, name }) => {
   if (isSignedIn) {
@@ -13,7 +15,9 @@ const NavbarUser = ({ onRouteChange, isSignedIn, name }) => {
           <div>
             <NavDropdown.Item className="d-flex">
               <MoonFill className="mt-1 mr-1"></MoonFill>
-              <div className="pl-1">Nite Mode</div>
+              <DarkMode className="pl-1" id="darkMode">
+                Nite Mode
+              </DarkMode>
             </NavDropdown.Item>
           </div>
           <div>
@@ -38,7 +42,10 @@ const NavbarUser = ({ onRouteChange, isSignedIn, name }) => {
     return (
       <div className="NavbarUser d-flex mr-2">
         <Navbar.Text>
-          <button className="reg-btn mr-2" onClick={() => onRouteChange("signin")}>
+          <button
+            className="reg-btn mr-2"
+            onClick={() => onRouteChange("signin")}
+          >
             Sign In
           </button>
           <button className="reg-btn" onClick={() => onRouteChange("Register")}>
