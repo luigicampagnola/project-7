@@ -10,9 +10,7 @@ const In = ({ addedIn, addedOut }) => {
   });
 
   const subAmount = addedOut.reduce((acc, amount) => {
-    const zero = Number(acc);
-    const num = Number(amount);
-    return zero + num;
+    return acc - amount;
   });
 
   const roundedAddedAmount = Math.round(addedAmount * 100) / 100;

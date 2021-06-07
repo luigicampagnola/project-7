@@ -56,7 +56,6 @@ class App extends Component {
       .then((data) => {
         console.log(data);
         data.forEach((move, i) => {
-          console.log(move);
           this.setState({
             movementsTable: [
               ...this.state.movementsTable,
@@ -71,7 +70,7 @@ class App extends Component {
           if (data[i].type === "Deposit") {
             this.setDepoAmount(data[i].amount);
           } else {
-            this.setWithAmount(data[i].amount);
+            this.setWithAmount(0 - data[i].amount);
           }
         });
       })
@@ -189,7 +188,9 @@ class App extends Component {
   };
   testClickHandler = () => {
     console.log(this.state.movementsTable);
+    console.log(this.state.addedOut);
   };
+
   render() {
     return (
       <div>
