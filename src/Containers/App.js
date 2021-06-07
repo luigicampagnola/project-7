@@ -15,7 +15,7 @@ const initialState = {
   movementsTable: [
     {
       id: 2,
-      type: "Deposit",
+      type: "",
       date: "",
       amount: "",
     },

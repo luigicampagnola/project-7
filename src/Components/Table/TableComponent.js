@@ -4,11 +4,9 @@ import Scroll from "../Scroll/Scroll";
 import "./TableComponent.css";
 
 const TableComponent = ({ movementsTable }) => {
-
   /* need to add conditioning to not render anything if 
     if amount is = 0
   */
-
 
   const colorType = (movement) => {
     let colorClass = "p-1 ";
@@ -16,23 +14,29 @@ const TableComponent = ({ movementsTable }) => {
       colorClass += "depo";
     } else if (movement.type === "Withdrawal") {
       colorClass += "wit";
-    } 
+    }
     return colorClass;
   };
 
-
   const renderMovements = (movementsTable, i) => {
-    return (
-      <tr key={i}>
-        <td className="p-3" >
-          <div className={colorType(movementsTable)}>{movementsTable.type}</div>
-        </td>
-        <td className="p-3 App" colSpan="2">
-          {movementsTable.date}
-        </td>
-        <td className="p-3 App">{movementsTable.amount}</td>
-      </tr>
-    );
+    if (
+      movementsTable.type === "Deposit" ||
+      movementsTable.type === "Withdrawal"
+    ) {
+      return (
+        <tr key={i}>
+          <td className="p-3">
+            <div className={colorType(movementsTable)}>
+              {movementsTable.type}
+            </div>
+          </td>
+          <td className="p-3 App" colSpan="2">
+            {movementsTable.date}
+          </td>
+          <td className="p-3 App">{movementsTable.amount}</td>
+        </tr>
+      );
+    }
   };
 
   return (
