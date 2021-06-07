@@ -5,31 +5,32 @@ import Home from "../Components/Home/Home";
 import Register from "../Components/Register/Register";
 import SignIn from "../Components/SignIn/SignIn";
 
+const initialState = {
+  WithdrawalsAmount: [],
+  DepositsAmount: [],
+  addedIn: [0],
+  addedOut: [0],
+  route: "signin",
+  isSignedIn: false,
+  movementsTable: [
+    {
+      id: 2,
+      type: "Deposit",
+      date: "",
+      amount: "",
+    },
+  ],
+  user: {
+    id: "",
+    name: "",
+    email: "",
+    joined: new Date(),
+  },
+};
 class App extends Component {
   constructor() {
     super();
-    this.state = {
-      WithdrawalsAmount: [],
-      DepositsAmount: [],
-      addedIn: [0],
-      addedOut: [0],
-      route: "signin",
-      isSignedIn: false,
-      movementsTable: [
-        {
-          id: 2,
-          type: "Deposit",
-          date: "",
-          amount: "",
-        },
-      ],
-      user: {
-        id: "",
-        name: "",
-        email: "",
-        joined: new Date(),
-      },
-    };
+    this.state = initialState;
   }
 
   loadUser = (data) => {
@@ -90,7 +91,7 @@ class App extends Component {
   //routing
   onRouteChange = (route) => {
     if (route === "signout") {
-      this.setState({ isSignedIn: false });
+      this.setState(initialState);
     } else if (route === "home") {
       this.setState({ isSignedIn: true });
     }
