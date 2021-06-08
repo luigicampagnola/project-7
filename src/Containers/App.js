@@ -133,7 +133,9 @@ class App extends Component {
         date: this.timeHandler(),
         amount: 0 - this.state.WithdrawalsAmount,
       }),
-    }).then((response) => response.json());
+    })
+      .then((response) => response.json())
+      .catch(console.log());
   };
 
   depositClickHandler = () => {
@@ -162,9 +164,11 @@ class App extends Component {
         date: this.timeHandler(),
         amount: this.state.DepositsAmount,
       }),
-    }).then((response) => {
-      response.json();
-    });
+    })
+      .then((response) => {
+        response.json();
+      })
+      .catch(console.log());
   };
 
   //INPUT HANDLERS
@@ -221,7 +225,6 @@ class App extends Component {
         )}
       </div>
     );
-
   }
 }
 

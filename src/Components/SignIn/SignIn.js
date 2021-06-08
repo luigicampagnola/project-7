@@ -39,7 +39,8 @@ class SignIn extends Component {
           this.props.onRouteChange("home");
           this.props.loadTransactions();
         }
-      });
+      })
+      .catch(console.log());
   };
 
   render() {
