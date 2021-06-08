@@ -2,6 +2,18 @@
   text-align: center;
 }
 
+
+.App-reg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.App-sign {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -18,7 +30,6 @@
 }
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -47,11 +58,11 @@
   height: 580px;
 }
 
-.sticky{
+.sticky {
   position: sticky;
   top: 0;
   background: white;
-} 
+}
 
 .Current {
   font-size: 28px;
@@ -94,7 +105,6 @@
 .sign-up {
   border-color: black;
   border-radius: 15px;
-  background-color: rgb(240, 234, 234);
 }
 
 .Dropdown {

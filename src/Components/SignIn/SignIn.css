@@ -1,9 +1,15 @@
 .signin {
-  background-color: #343a40;
-  color: white;
-  border-radius: 10px;
-  padding: 30px;
-  box-shadow: 5px 5px 5px rgb(173, 173, 173);
   margin-top: 10%;
-  padding-bottom: 60px;
+  margin-bottom: 30%;
+  background-color: #343a40;
+  max-width: 50px;
+  min-width: 58vh;
+  padding: 55px;
+  min-height: 25vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  border-radius: 15px;
 }

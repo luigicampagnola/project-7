@@ -1,6 +1,5 @@
 import React from "react";
 import { Component } from "react";
-import { Col, Row } from "react-bootstrap";
 import Email from "./Email/Email";
 import Password from "./Password/Password";
 import "./SignIn.css";
@@ -45,18 +44,13 @@ class SignIn extends Component {
 
   render() {
     return (
-      <div>
-        <Row>
-          <Col sm={4}></Col>
-          <Col sm={4}>
-            <div className="signin">
-              <SignInTitle />
-              <Email onEmailChange={this.onEmailChange} />
-              <Password onPasswordChange={this.onPasswordChange} />
-              <SignInButton onSubmitSignIn={this.onSubmitSignIn} />
-            </div>
-          </Col>
-        </Row>
+      <div className="App-sign">
+        <div className="signin">
+          <SignInTitle />
+          <Email onEmailChange={this.onEmailChange} />
+          <Password onPasswordChange={this.onPasswordChange} />
+          <SignInButton onSubmitSignIn={this.onSubmitSignIn} />
+        </div>
       </div>
     );
   }

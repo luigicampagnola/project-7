@@ -1,4 +1,13 @@
 #darkMode {
+  background: transparent;
   border: none;
-  background-color: transparent;
+}
+
+#darkMode:hover,
+#darkMode:focus {
+  filter: none;
+  cursor: pointer;
+}
+#darkMode.clicked {
+  filter: none !important;
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import "./Darkmode.css";
 
-const DarkMode = () => {
+const Darkmode = () => {
   let clickedClass = "clicked";
   const body = document.body;
   const lightTheme = "light";
@@ -11,6 +11,7 @@ const DarkMode = () => {
   if (localStorage) {
     theme = localStorage.getItem("theme");
   }
+
   if (theme === lightTheme || theme === darkTheme) {
     body.classList.add(theme);
   } else {
@@ -30,15 +31,16 @@ const DarkMode = () => {
       theme = darkTheme;
     }
   };
+
   return (
     <button
       className={theme === "dark" ? clickedClass : ""}
       id="darkMode"
       onClick={(e) => switchTheme(e)}
     >
-      Dark Mode
+      Moon
     </button>
   );
 };
 
-export default DarkMode;
+export default Darkmode;

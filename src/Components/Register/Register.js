@@ -1,5 +1,4 @@
 import React from "react";
-import { Col, Row } from "react-bootstrap";
 import Email from "./Email/Email";
 import Name from "./Name/Name";
 import Password from "./Password/Password";
@@ -51,19 +50,14 @@ class Register extends Component {
 
   render() {
     return (
-      <div>
-        <Row>
-          <Col sm={4}></Col>
-          <Col sm={4}>
-            <div className="reg-form">
-              <Title />
-              <Name onNameChange={this.onNameChange} />
-              <Email onEmailChange={this.onEmailChange} />
-              <Password onPasswordChange={this.onPasswordChange} />
-              <RegisterButton onSubmitRegister={this.onSubmitRegister} />
-            </div>
-          </Col>
-        </Row>
+      <div className="App-reg">
+        <div className="reg-form">
+          <Title />
+          <Name onNameChange={this.onNameChange} />
+          <Email onEmailChange={this.onEmailChange} />
+          <Password onPasswordChange={this.onPasswordChange} />
+          <RegisterButton onSubmitRegister={this.onSubmitRegister} />
+        </div>
       </div>
     );
   }
