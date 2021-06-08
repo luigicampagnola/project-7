@@ -1,7 +1,7 @@
 import React from "react";
 import { Navbar, NavDropdown } from "react-bootstrap";
-import { DoorOpenFill, GearFill, MoonFill } from "react-bootstrap-icons";
-import Darkmode from "../Darkmode/Darkmode";
+import { DoorOpenFill, /* GearFill, MoonFill */ } from "react-bootstrap-icons";
+/* import Darkmode from "../Darkmode/Darkmode"; */
 
 const NavbarUser = ({ onRouteChange, isSignedIn, name }) => {
   if (isSignedIn) {
@@ -11,7 +11,7 @@ const NavbarUser = ({ onRouteChange, isSignedIn, name }) => {
           Signed in as: <a href="#login">{name}</a>
         </Navbar.Text>
         <NavDropdown alignRight>
-          <div>
+{/*           <div>
             <NavDropdown.Item className="d-flex">
               <MoonFill className="mt-1 mr-1"></MoonFill>
               <Darkmode />
@@ -23,7 +23,7 @@ const NavbarUser = ({ onRouteChange, isSignedIn, name }) => {
               <div className="pl-1">Settings</div>
             </NavDropdown.Item>
           </div>
-          <NavDropdown.Divider />
+          <NavDropdown.Divider /> */}
           <div>
             <NavDropdown.Item className="d-flex">
               <DoorOpenFill className="mt-1 mr-1"></DoorOpenFill>
