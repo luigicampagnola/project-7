@@ -45,7 +45,7 @@ class App extends Component {
   };
 
   loadTransactions = () => {
-    fetch("http://localhost:3000/loadedTransactions", {
+    fetch("https://sleepy-fjord-12020.herokuapp.com/loadedTransactions", {
       method: "put",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -123,7 +123,7 @@ class App extends Component {
       addedOut: [...this.state.addedOut, this.state.WithdrawalsAmount],
     });
 
-    fetch("http://localhost:3000/transactions", {
+    fetch("https://sleepy-fjord-12020.herokuapp.com/transactions", {
       method: "put",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -154,7 +154,7 @@ class App extends Component {
       addedIn: [...this.state.addedIn, this.state.DepositsAmount],
     });
 
-    fetch("http://localhost:3000/transactions", {
+    fetch("https://sleepy-fjord-12020.herokuapp.com/transactions", {
       method: "put",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
