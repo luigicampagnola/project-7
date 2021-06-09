@@ -5,8 +5,7 @@ import { Container } from "react-bootstrap";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import WithdrawalButton from "./Button/Button";
-import { CurrencyDollar } from 'react-bootstrap-icons';
-
+import { CurrencyDollar } from "react-bootstrap-icons";
 
 const Withdrawals = ({ withdrawalsInputHandler, withdrawalClickHandler }) => {
   return (
@@ -22,15 +21,18 @@ const Withdrawals = ({ withdrawalsInputHandler, withdrawalClickHandler }) => {
             >
               <InputGroup.Prepend>
                 <InputGroup.Text>
-                <CurrencyDollar />
+                  <CurrencyDollar />
                 </InputGroup.Text>
               </InputGroup.Prepend>
-              <FormControl aria-label="Amount (to the nearest dollar)" />
+              <FormControl
+                aria-label="Amount (to the nearest dollar)"
+                type="number"
+              />
             </InputGroup>
             <div className="App">Amount</div>
           </Col>
           <Col>
-            <WithdrawalButton withdrawalClickHandler={withdrawalClickHandler}/>
+            <WithdrawalButton withdrawalClickHandler={withdrawalClickHandler} />
           </Col>
         </Row>
         <div className="App"></div>

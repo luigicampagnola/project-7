@@ -31,7 +31,7 @@ const TableComponent = ({ movementsTable }) => {
           </td>
           <td className="p-3 App">{movementsTable.amount}</td>
         </tr>
-      );
+      ); 
     }
   };
 

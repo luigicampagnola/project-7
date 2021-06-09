@@ -27,12 +27,14 @@ const Deposits = ({ depositInputHandler, depositClickHandler }) => {
               <FormControl
                 aria-label="Amount (to the nearest dollar)"
                 className=""
+                type="number"
+
               />
             </InputGroup>
             <div className="App">Amount</div>
           </Col>
           <Col>
-            <DepositButton depositClickHandler={depositClickHandler}/>
+            <DepositButton depositClickHandler={depositClickHandler} />
           </Col>
         </Row>
         <div className="App"></div>
