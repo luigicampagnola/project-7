@@ -22,8 +22,9 @@ const Home = ({
   depositInputHandler,
   addedIn,
   addedOut,
-/*   testClickHandler,
- */}) => {
+  /*   testClickHandler,
+   */
+}) => {
   return (
     <div>
       <div className="mb-5">
@@ -32,10 +33,10 @@ const Home = ({
             <CurrentBalance movementsTable={movementsTable} />
             <CurrentTime className="mb-1" />
             <Row>
-              <Col sm={7}>
+              <Col xs={12} lg="4" className="mt-5" md={{ span: 5, offset: 3 }}>
                 <TableComponent movementsTable={movementsTable} />
               </Col>
-              <Col sm={5}>
+              <Col lg="3" className="mt-5">
                 <div className="transaction-color">
                   <Withdrawals
                     withdrawalsInputHandler={withdrawalsInputHandler}
@@ -63,11 +64,9 @@ const Home = ({
               <Col sm={8}>
                 <In className="mt-2" addedIn={addedIn} addedOut={addedOut} />
               </Col>
-              <Col sm={4}>
-
-              </Col>
+              <Col sm={4}></Col>
             </Row>
-{/*             <TestButton testClickHandler={testClickHandler} /> */}
+            {/*             <TestButton testClickHandler={testClickHandler} /> */}
           </Container>
         </div>
       </div>
