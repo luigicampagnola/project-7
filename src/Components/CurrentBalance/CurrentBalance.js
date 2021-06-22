@@ -1,11 +1,8 @@
 import React from "react";
-import { Col } from "react-bootstrap";
-import { Row } from "react-bootstrap";
+import { Col, Row, Container } from "react-bootstrap";
 import { CurrencyDollar } from "react-bootstrap-icons";
 
-
 const CurrentBalance = ({ movementsTable }) => {
-  
   const arrayAmount = movementsTable.map((obj) => {
     return Number(obj.amount);
   });
@@ -19,18 +16,22 @@ const CurrentBalance = ({ movementsTable }) => {
   const toString = rounded + "";
 
   return (
-    <div>
-      <Row>
-        <Col sm={5}>
-          <div className="Current mb-2">Current Balance</div>
-        </Col>
-        <Col>
-          <div className="Current d-flex">
-            <CurrencyDollar className="mt-2"/>
+    <div className="Current">
+      <Container>
+        <Row>
+          <Col
+            lg={{ span: 3, offset: 1 }}
+            xs={{ span: 3, offset: 1 }}
+            md={{ span: 3, offset: 2 }}
+          >
+            <div className=" mb-2">Current Balance</div>
+          </Col>
+          <Col lg={{ span: 1, offset: 1 }} xs={{ span: 3, offset: 4 }}>
+            <CurrencyDollar className="mt-2" />
             {toString}
-          </div>
-        </Col>
-      </Row>
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 };
