@@ -27,7 +27,7 @@ const Home = ({
 }) => {
   return (
     <div>
-      <Container fluid className="bg-color">
+      <Container fluid className="bg-home">
         <CurrentBalance movementsTable={movementsTable} />
         <CurrentTime className="mb-1" />
         <Row>
