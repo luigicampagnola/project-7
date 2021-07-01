@@ -35,17 +35,17 @@ const Home = ({
             <TableComponent movementsTable={movementsTable} />
           </Col>
           <Col lg={{ span: 3, offset: 0 }} md={{ span: 8, offset: 2 }}>
+            <div className="mt-2 loan-color">
+              <Deposits
+                depositInputHandler={depositInputHandler}
+                depositClickHandler={depositClickHandler}
+              />
+            </div>
             <div className="transaction-color">
               <Withdrawals
                 withdrawalsInputHandler={withdrawalsInputHandler}
                 withdrawalClickHandler={withdrawalClickHandler}
                 className="bg-warning shadow-1-strong"
-              />
-            </div>
-            <div className="mt-2 loan-color">
-              <Deposits
-                depositInputHandler={depositInputHandler}
-                depositClickHandler={depositClickHandler}
               />
             </div>
             <div className="mt-2 close-color">
