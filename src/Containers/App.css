@@ -40,13 +40,13 @@
 
 .In {
   font-weight: 600;
-  font-size: 25px;
+  font-size: large;
   color: #5cb85c;
 }
 
 .Out {
   font-weight: 600;
-  font-size: 25px;
+  font-size: large;
   color: #d9534f;
 }
 
