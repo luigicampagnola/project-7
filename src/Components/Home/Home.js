@@ -34,7 +34,7 @@ const Home = ({
           <Col lg={{ span: 5, offset: 2 }}>
             <TableComponent movementsTable={movementsTable} />
           </Col>
-          <Col sm={5}>
+          <Col lg={{ span: 3, offset: 0 }} md={{ span: 8, offset: 2 }}>
             <div className="transaction-color">
               <Withdrawals
                 withdrawalsInputHandler={withdrawalsInputHandler}
