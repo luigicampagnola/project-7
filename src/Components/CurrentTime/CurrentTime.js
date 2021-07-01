@@ -1,4 +1,5 @@
 import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
 
 const CurrentTime = () => {
   const Now = new Date();
@@ -9,7 +10,17 @@ const CurrentTime = () => {
   const Minutes = `${Now.getMinutes()}`.padStart(2, 0);
   return (
     <div>
-      <div className="time-color">{`As of ${Month}/${Day}/${Year}, ${Hour}:${Minutes}`}</div>
+      <Container>
+        <Row>
+          <Col
+            className="time-color"
+            lg={{ span: 3, offset: 1 }}
+            xs={{ span: 3, offset: 1 }}
+          >
+            <div>{`As of ${Month}/${Day}/${Year}, ${Hour}:${Minutes}`}</div>
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 };
