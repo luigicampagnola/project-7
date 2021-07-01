@@ -38,7 +38,7 @@ const TableComponent = ({ movementsTable }) => {
   return (
     <div>
       <Scroll>
-        <Table striped bordered hover size="sm">
+        <Table striped bordered hover>
           <thead className="sticky">
             <tr>
               <th className="p-2 App ">Transaction</th>

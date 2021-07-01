@@ -31,7 +31,7 @@ const Home = ({
         <CurrentBalance movementsTable={movementsTable} />
         <CurrentTime className="mb-1" />
         <Row>
-          <Col sm={7}>
+          <Col lg={{ span: 5, offset: 2 }}>
             <TableComponent movementsTable={movementsTable} />
           </Col>
           <Col sm={5}>
