@@ -10,8 +10,7 @@ import CurrentBalance from "../CurrentBalance/CurrentBalance";
 import TableComponent from "../Table/TableComponent";
 import CurrentTime from "../CurrentTime/CurrentTime";
 import In from "../In/In";
-/* import TestButton from "../TestButton/TestButton";
- */
+
 const Home = ({
   movementsTable,
   deleteInputHandler,
@@ -22,8 +21,6 @@ const Home = ({
   depositInputHandler,
   addedIn,
   addedOut,
-  /*   testClickHandler,
-   */
 }) => {
   return (
     <div>
