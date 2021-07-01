@@ -9,7 +9,7 @@ const CurrentTime = () => {
   const Minutes = `${Now.getMinutes()}`.padStart(2, 0);
   return (
     <div>
-      <h6 className="time-color">{`As of ${Month}/${Day}/${Year}, ${Hour}:${Minutes}`}</h6>
+      <div className="time-color">{`As of ${Month}/${Day}/${Year}, ${Hour}:${Minutes}`}</div>
     </div>
   );
 };

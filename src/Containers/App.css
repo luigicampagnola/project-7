@@ -2,7 +2,6 @@
   text-align: center;
 }
 
-
 .App-reg {
   display: flex;
   flex-direction: column;
@@ -65,7 +64,7 @@
 }
 
 .Current {
-  font-size: 28px;
+  font-size: large;
   font-weight: 500;
 }
 

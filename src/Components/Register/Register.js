@@ -29,6 +29,7 @@ class Register extends Component {
     this.setState({ registerPassword: event.target.value });
   };
 
+  
   onSubmitRegister = () => {
     fetch("https://sleepy-fjord-12020.herokuapp.com/register", {
       method: "post",
