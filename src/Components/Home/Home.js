@@ -56,12 +56,9 @@ const Home = ({
             </div>
           </Col>
         </Row>
-      </Container>
-      <Container>
         <Row>
-          <In className="mt-2" addedIn={addedIn} addedOut={addedOut} />
+          <In addedIn={addedIn} addedOut={addedOut} />
         </Row>
-        {/*             <TestButton testClickHandler={testClickHandler} /> */}
       </Container>
     </div>
   );
