@@ -59,10 +59,7 @@ const Home = ({
       </Container>
       <Container>
         <Row>
-          <Col sm={8}>
-            <In className="mt-2" addedIn={addedIn} addedOut={addedOut} />
-          </Col>
-          <Col sm={4}></Col>
+          <In className="mt-2" addedIn={addedIn} addedOut={addedOut} />
         </Row>
         {/*             <TestButton testClickHandler={testClickHandler} /> */}
       </Container>
