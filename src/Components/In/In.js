@@ -17,7 +17,7 @@ const In = ({ addedIn, addedOut }) => {
   const roundedSubAmount = Math.round(subAmount * 100) / 100;
 
   return (
-    <Container>
+    <Container className='mt-3'>
       <Row>
         <Col
           lg={{ span: 3, offset: 1 }}
