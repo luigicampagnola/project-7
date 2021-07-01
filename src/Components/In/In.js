@@ -21,14 +21,14 @@ const In = ({ addedIn, addedOut }) => {
       <Row>
         <Col
           lg={{ span: 3, offset: 1 }}
-          xs={{ span: 3, offset: 1 }}
+          xs={{ span: 4, offset: 1 }}
           md={{ span: 3, offset: 2 }}
         >
           <div className="In">In: {roundedAddedAmount}</div>
         </Col>
         <Col
           lg={{ span: 3, offset: 1 }}
-          xs={{ span: 3, offset: 4 }}
+          xs={{ span: 4, offset: 3 }}
           md={{ span: 3, offset: 3 }}
         >
           <div className="Out">Out: {roundedSubAmount}</div>
