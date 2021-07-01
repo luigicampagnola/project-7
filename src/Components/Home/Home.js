@@ -32,13 +32,13 @@ const Home = ({
             <TableComponent movementsTable={movementsTable} />
           </Col>
           <Col lg={{ span: 3, offset: 0 }} md={{ span: 8, offset: 2 }}>
-            <div className="mt-2 loan-color">
+            <div className="loan-color">
               <Deposits
                 depositInputHandler={depositInputHandler}
                 depositClickHandler={depositClickHandler}
               />
             </div>
-            <div className="transaction-color">
+            <div className="mt-2 transaction-color">
               <Withdrawals
                 withdrawalsInputHandler={withdrawalsInputHandler}
                 withdrawalClickHandler={withdrawalClickHandler}
@@ -53,7 +53,7 @@ const Home = ({
             </div>
           </Col>
         </Row>
-        <Row>
+        <Row className='pb-5'>
           <In addedIn={addedIn} addedOut={addedOut} />
         </Row>
       </Container>
