@@ -15,7 +15,7 @@ const CurrentTime = () => {
           <Col
             className="time-color"
             lg={{ span: 3, offset: 1 }}
-            xs={{ span: 6, offset: 1 }}
+            xs={{ span: 8, offset: 1 }}
           >
             <div>{`As of ${Month}/${Day}/${Year}, ${Hour}:${Minutes}`}</div>
           </Col>
