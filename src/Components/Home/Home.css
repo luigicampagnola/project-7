@@ -13,6 +13,11 @@
   align-items: center;
 }
 
+.current-title {
+  font-size: larger;
+  font-weight: 600;
+}
+
 .transaction-color {
   background-color: #f0ad4e;
   color: white;
