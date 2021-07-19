@@ -32,7 +32,7 @@ const CurrentBalance = ({ movementsTable }) => {
             xs={{ span: 3, offset: 4 }}
           >
             <CurrencyDollar className="mb-1 current-title" />
-            {toString}
+            <div className=" current-title">{toString}</div>
           </Col>
         </Row>
       </Container>
