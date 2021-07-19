@@ -27,7 +27,7 @@ const CurrentBalance = ({ movementsTable }) => {
             <div className="current-title">Current Balance</div>
           </Col>
           <Col
-            className="mt-5 mb-3"
+            className="mt-5 mb-3 d-flex"
             lg={{ span: 6, offset: 1 }}
             xs={{ span: 3, offset: 4 }}
           >
