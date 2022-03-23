@@ -5,6 +5,8 @@
   padding: 5px;
   margin-top: 40px;
   font-size: 25px;
+  transform: translate(0);
+  transition: transform 0.25s ease-out;
 }
 
 .signin-btn:hover {
