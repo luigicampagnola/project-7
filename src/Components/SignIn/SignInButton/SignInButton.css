@@ -1,17 +1,9 @@
 .signin-btn {
-  margin: 4rem 4rem 0rem 4rem;
-  padding: 16px;
-  background-color: rgb(30, 224, 224);
-  color: #ffff;
-  font-size: large;
-  border: none;
-  cursor: pointer;
-  -moz-osx-font-smoothing: grayscale;
-  backface-visibility: hidden;
-  transform: translate(0);
-  transition: transform 0.25s ease-out;
+  border-color: transparent;
+  margin-left: 25%;
+  width: 50%;
+  padding: 5px;
+  margin-top: 40px;
+  font-size: 25px;
 }
 
-.signin-btn:hover {
-  transform: scale(1.05);
-}
