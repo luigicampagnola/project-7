@@ -7,3 +7,6 @@
   font-size: 25px;
 }
 
+.signin-btn:hover {
+  transform: scale(1.05);
+}
