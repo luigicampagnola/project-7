@@ -5,7 +5,7 @@ const SignInButton = ({ onSubmitSignIn }) => {
   return (
     <div>
       <button className="signin-btn" onClick={onSubmitSignIn}>
-        sign in
+        Sign in
       </button>
     </div>
   );

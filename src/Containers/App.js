@@ -46,7 +46,7 @@ class App extends Component {
 
   loadTransactions = () => {
     fetch("https://sleepy-fjord-12020.herokuapp.com/loadedTransactions", {
-      method: "put",
+      method: "put", 
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         email: this.state.user.email,
@@ -181,7 +181,7 @@ class App extends Component {
     this.setState({ DepositsAmount: Number(event.target.value) });
   };
   deleteClickHandler = () => {
-    alert("Sorry.. feature unavailable at the moment");
+    /* alert("Sorry.. feature unavailable at the moment"); */
   };
 
   deleteInputHandler = (event) => {};
